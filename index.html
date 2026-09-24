@@ -11,7 +11,13 @@
 <meta property="og:description" content="4 年大型产业集团投融资经验 · 国内首例自贸区 SPV 出口退税集装箱经营性租赁 · 授信 18 亿元">
 <meta property="og:image" content="avatar.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2316306b'/%3E%3Cstop offset='1' stop-color='%231f5fd6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' font-family='PingFang SC,Microsoft YaHei,sans-serif' font-weight='700' fill='%23ffffff'%3E%E7%8E%8B%3C/text%3E%3C/svg%3E">
-<script>document.documentElement.classList.add('js')</script>
+<script>
+(function(){var d=document.documentElement,l=null;d.classList.add('js');
+try{var m=location.search.match(/[?&]lang=(en|zh)\b/);if(m)l=m[1]}catch(e){}
+if(!l){try{l=localStorage.getItem('lang')}catch(e){}}
+if(l!=='en'&&l!=='zh'){var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'zh'];l=/^zh/i.test(ls[0]||'zh')?'zh':'en'}
+if(l==='en'){d.classList.add('lang-en');d.lang='en'}window.__LANG=l})();
+</script>
 <style>
 :root{
   --bg:#f5f7fa;
@@ -51,6 +57,21 @@ button{font-family:inherit}
 .i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* ---------- language ---------- */
+html.lang-en .zh,html:not(.lang-en) .en{display:none!important}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:inline-flex;align-items:center;padding:3px;gap:2px;border-radius:9px;background:#fff;border:1px solid var(--line2)}
+.lang-toggle button{border:0;background:transparent;font-size:13px;font-weight:600;color:var(--muted);height:28px;min-width:38px;padding:0 10px;border-radius:6px;cursor:pointer;transition:background .2s,color .2s}
+.lang-toggle button:hover{color:var(--navy)}
+.lang-toggle button.on{background:var(--navy);color:#fff}
+html.lang-en .name{font-size:clamp(46px,7vw,88px);letter-spacing:0;line-height:1.08}
+html.lang-en .pinyin{letter-spacing:.3em}
+html.lang-en .brand{letter-spacing:.01em}
+html.lang-en .id-name{font-size:23px;letter-spacing:0}
+html.lang-en .id-row{grid-template-columns:66px 1fr}
+@media (max-width:1100px){html.lang-en .nav-links{display:none}}
+@media (max-width:640px){html.lang-en .rot{min-height:3.4em}}
 
 /* ---------- progress + nav ---------- */
 #progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);z-index:60}
@@ -120,7 +141,7 @@ button{font-family:inherit}
 .tag.hl{border-color:#cfdcf5;color:var(--navy);background:#edf2fb}
 .id-rows{margin-top:20px;border-top:1px dashed var(--line2);padding-top:16px;display:grid;gap:10px}
 .id-row{display:grid;grid-template-columns:48px 1fr;font-size:14px;align-items:baseline;color:var(--body)}
-.id-row span:first-child{color:var(--dim);font-size:12.5px}
+.id-row>span:first-child{color:var(--dim);font-size:12.5px}
 .id-foot{margin-top:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
 .id-foot .code{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--dim);line-height:1.6}
 .barcode{height:28px;width:112px;flex:none;opacity:.35;background:repeating-linear-gradient(90deg,var(--text) 0 2px,transparent 2px 4px,var(--text) 4px 5px,transparent 5px 8px,var(--text) 8px 11px,transparent 11px 12px,var(--text) 12px 13px,transparent 13px 17px)}
@@ -179,7 +200,7 @@ button{font-family:inherit}
 .res{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .res div{padding:14px 16px;border-radius:10px;background:var(--soft);border:1px solid var(--line)}
 .res b{display:block;font-size:22px;font-family:var(--num);font-weight:700;line-height:1.3}
-.res span{font-size:13px;color:var(--muted)}
+.res div>span{font-size:13px;color:var(--muted)}
 .awards{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
 .award{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:5px 12px;border-radius:8px;background:#fdf6e7;border:1px solid #f0d9a8;color:var(--gold);font-weight:500}
 .award .i{width:14px;height:14px}
@@ -197,13 +218,14 @@ button{font-family:inherit}
 .orbit .node rect{fill:#fff;stroke:#cdd7e4;filter:drop-shadow(0 2px 4px rgba(15,27,51,.08))}
 .orbit .node text{fill:var(--text);font-size:13px;text-anchor:middle;dominant-baseline:central;font-family:var(--sans)}
 .orbit .t1{fill:#fff;font-size:15px;font-weight:700;text-anchor:middle;font-family:var(--sans)}
+.orbit .t1.sm{font-size:13.5px}
 .orbit .t2{fill:#a9d8ff;font-size:12px;text-anchor:middle;font-family:var(--mono);letter-spacing:.06em}
 .orbit .cap{fill:var(--muted);font-size:12px;text-anchor:middle;font-family:var(--sans)}
 .flow{display:flex;flex-direction:column;align-items:stretch;width:100%;max-width:340px}
 .step{padding:16px 18px;border-radius:12px;border:1px solid var(--line2);background:#fff;text-align:center;box-shadow:0 1px 2px rgba(15,27,51,.05)}
 .step .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--dim)}
 .step b{display:block;margin-top:6px;font-size:18px;color:var(--text)}
-.step span{display:block;margin-top:2px;font-size:13px;color:var(--muted)}
+.step>span{display:block;margin-top:2px;font-size:13px;color:var(--muted)}
 .step.bad{background:#fef5f4;border-color:#f7d4cf}
 .step.bad b{color:#b42318}
 .step.good{border-color:#a7d9e0;background:#eaf7f9;box-shadow:0 10px 30px -14px rgba(11,129,147,.45)}
@@ -233,7 +255,7 @@ button{font-family:inherit}
 .istats{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .istats div{padding:12px 14px;border-radius:10px;background:var(--soft);border:1px solid var(--line)}
 .istats b{display:block;font-family:var(--num);font-size:24px;font-weight:800;line-height:1.2;color:var(--navy)}
-.istats span{display:block;margin-top:2px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.istats div>span{display:block;margin-top:2px;font-size:12.5px;line-height:1.5;color:var(--muted)}
 .isub{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line2)}
 .isub-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
 .isub-co{font-size:16.5px;font-weight:700;color:var(--text)}
@@ -309,7 +331,7 @@ button{font-family:inherit}
 .badge .i{width:14px;height:14px;color:var(--teal)}
 .sk ul{list-style:none;margin-top:16px;display:grid;gap:12px;font-size:14.5px;color:var(--body)}
 .sk li b{color:var(--text)}
-.sk li span{display:block;font-size:13px;color:var(--muted)}
+.sk li .s{display:block;font-size:13px;color:var(--muted)}
 .life{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px;margin-top:16px}
 .lf{padding:26px}
 .lf .ico{background:#eaf7f9;border-color:#c5e6eb;color:var(--teal)}
@@ -317,7 +339,7 @@ button{font-family:inherit}
 .lf p{margin-top:6px;color:var(--muted);font-size:14.5px}
 .ride-stats{display:flex;gap:26px;margin-top:14px}
 .ride-stats b{font-family:var(--num);font-size:34px;font-weight:800;line-height:1}
-.ride-stats span{font-size:13px;color:var(--muted);margin-left:4px}
+.ride-stats div>span{font-size:13px;color:var(--muted);margin-left:4px}
 .route{position:relative;height:34px;margin:22px 4px 0}
 .route .line{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:repeating-linear-gradient(90deg,var(--line2) 0 6px,transparent 6px 12px)}
 .route .prog{position:absolute;left:0;top:50%;height:2px;margin-top:-1px;width:100%;background:var(--grad);transition:width 2.6s cubic-bezier(.4,0,.2,1) .3s}
@@ -419,9 +441,13 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   @page{size:A4;margin:10mm 13mm 9mm}
   html,body{background:#fff!important;color:#1d2330}
   body::before{display:none}
-  body>*:not(.print-cv){display:none!important}
+  body>*:not(.print-cv):not(.print-cv-en){display:none!important}
   .print-cv{display:block}
+  html.lang-en .print-cv{display:none}
+  html.lang-en .print-cv-en{display:block;page:en}
+  @page en{margin:31pt 36pt 30pt}
 }
+.print-cv-en{display:none}
 .print-cv{font-family:var(--sans);color:#1d2330;font-size:9.1pt;line-height:1.5}
 .pcv-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-bottom:10px;border-bottom:2px solid #1e3a8a}
 .pcv-head h1{font-size:22pt;letter-spacing:.08em;line-height:1.1;color:#0f172a}
@@ -447,17 +473,23 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
 
 <header class="nav" id="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#top"><span class="brand-mark">王</span>王之寻</a>
-    <nav class="nav-links" aria-label="页面导航">
-      <a href="#results">核心成果</a>
-      <a href="#cases">代表项目</a>
-      <a href="#experience">工作经历</a>
-      <a href="#ask">简历问答</a>
-      <a href="#education">教育背景</a>
-      <a href="#skills">资质技能</a>
-      <a href="#contact">联系</a>
+    <a class="brand" href="#top"><span class="brand-mark">王</span><span class="zh">王之寻</span><span class="en">Zhixun Wang</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#results"><span class="zh">核心成果</span><span class="en">Results</span></a>
+      <a href="#cases"><span class="zh">代表项目</span><span class="en">Cases</span></a>
+      <a href="#experience"><span class="zh">工作经历</span><span class="en">Experience</span></a>
+      <a href="#ask"><span class="zh">简历问答</span><span class="en">Ask</span></a>
+      <a href="#education"><span class="zh">教育背景</span><span class="en">Education</span></a>
+      <a href="#skills"><span class="zh">资质技能</span><span class="en">Skills</span></a>
+      <a href="#contact"><span class="zh">联系</span><span class="en">Contact</span></a>
     </nav>
-    <a class="nav-cta" href="resume.pdf" download="王之寻简历.pdf"><svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span>PDF 简历</span></a>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="zh" aria-label="切换到中文">中</button>
+        <button type="button" data-lang="en" aria-label="Switch to English">EN</button>
+      </div>
+      <a class="nav-cta" data-pdf href="resume.pdf" download="王之寻简历.pdf"><svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span class="lbl"><span class="zh">PDF 简历</span><span class="en">Resume PDF</span></span></a>
+    </div>
   </div>
 </header>
 
@@ -468,34 +500,34 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="glow g1"></div><div class="glow g2"></div>
   <div class="container hero-inner">
     <div>
-      <div class="eyebrow reveal"><span class="dot"></span>INDUSTRY × CAPITAL · 产融结合</div>
-      <div class="pinyin reveal d1">WANG ZHIXUN</div>
-      <h1 class="name reveal d1">王之寻</h1>
-      <p class="role reveal d2">资本管理主管<span class="sep">/</span>产业投融资</p>
-      <p class="rot reveal d2">4 年大型产业集团投融资 · 专注 <span class="word grad" id="rot">融资租赁</span><span class="caret"></span></p>
-      <p class="lead reveal d3">落地<b>国内首例</b>自贸区 SPV 出口退税集装箱经营性租赁，获批授信 <b>18 亿元</b>，公司年增利润超 <b>6000 万元</b>。贯通融资租赁、产业基金募投、存量资产盘活、股权治理与私募基金合规。</p>
+      <div class="eyebrow reveal"><span class="dot"></span>INDUSTRY × CAPITAL<span class="zh"> · 产融结合</span></div>
+      <div class="pinyin reveal d1"><span class="zh">WANG ZHIXUN</span><span class="en">RED · 王之寻</span></div>
+      <h1 class="name reveal d1"><span class="zh">王之寻</span><span class="en">Zhixun Wang</span></h1>
+      <p class="role reveal d2"><span class="zh">资本管理主管<span class="sep">/</span>产业投融资</span><span class="en">Capital Management Supervisor<span class="sep">/</span>Investment &amp; Financing</span></p>
+      <p class="rot reveal d2"><span class="zh">4 年大型产业集团投融资 · 专注 </span><span class="en">4 years at CIMC Group · Focus: </span><span class="word grad" id="rot">融资租赁</span><span class="caret"></span></p>
+      <p class="lead reveal d3"><span class="zh">落地<b>国内首例</b>自贸区 SPV 出口退税集装箱经营性租赁，获批授信 <b>18 亿元</b>，公司年增利润超 <b>6000 万元</b>。贯通融资租赁、产业基金募投、存量资产盘活、股权治理与私募基金合规。</span><span class="en">Delivered <b>China’s first</b> FTZ-SPV export-tax-rebate container operating lease — <b>RMB 1.8bn</b> in facilities and <b>RMB 60m+</b> annual profit uplift. Hands-on across lease finance, industrial funds, asset turnaround, equity governance and private fund compliance.</span></p>
       <div class="cta reveal d4">
-        <a class="btn primary" href="#ask">向我的简历提问<svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a class="btn ghost" href="resume.pdf" download="王之寻简历.pdf"><svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>下载 PDF 简历</a>
+        <a class="btn primary" href="#ask"><span class="zh">向我的简历提问</span><span class="en">Ask my resume</span><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a class="btn ghost" data-pdf href="resume.pdf" download="王之寻简历.pdf"><svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span class="zh">下载 PDF 简历</span><span class="en">Download resume (PDF)</span></a>
       </div>
     </div>
 
-    <aside class="idcard reveal d3" id="idcard" aria-label="个人名片">
-      <div class="id-top"><span>PROFILE · 2026</span><span class="loc"><svg class="i" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>广东深圳</span></div>
+    <aside class="idcard reveal d3" id="idcard" aria-label="Profile">
+      <div class="id-top"><span>PROFILE · 2026</span><span class="loc"><svg class="i" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span class="zh">广东深圳</span><span class="en">Shenzhen, China</span></span></div>
       <div class="id-main">
-        <div class="photo"><img src="avatar.png" alt="王之寻照片" width="148" height="199"><span class="bk tl"></span><span class="bk tr"></span><span class="bk bl"></span><span class="bk br"></span></div>
+        <div class="photo"><img src="avatar.png" alt="王之寻 Zhixun Wang" width="148" height="199"><span class="bk tl"></span><span class="bk tr"></span><span class="bk bl"></span><span class="bk br"></span></div>
         <div>
-          <div class="id-name">王之寻</div>
-          <div class="id-title">资本管理主管</div>
-          <div class="id-tags"><span class="tag hl">融资租赁</span><span class="tag hl">产业基金</span><span class="tag">资产盘活</span><span class="tag">股权治理</span></div>
+          <div class="id-name"><span class="zh">王之寻</span><span class="en">Zhixun Wang</span></div>
+          <div class="id-title"><span class="zh">资本管理主管</span><span class="en">Capital Management Supervisor</span></div>
+          <div class="id-tags"><span class="tag hl"><span class="zh">融资租赁</span><span class="en">Lease Finance</span></span><span class="tag hl"><span class="zh">产业基金</span><span class="en">Industrial Funds</span></span><span class="tag"><span class="zh">资产盘活</span><span class="en">Turnaround</span></span><span class="tag"><span class="zh">股权治理</span><span class="en">Governance</span></span></div>
         </div>
       </div>
       <div class="id-rows">
-        <div class="id-row"><span>现任</span><span>中集集装箱（集团）· 资本管理部</span></div>
-        <div class="id-row"><span>经验</span><span>4 年大型产业集团投融资</span></div>
-        <div class="id-row"><span>硕士</span><span>台湾大学 · 经济学（QS 54）</span></div>
-        <div class="id-row"><span>本科</span><span>湖南大学 · 数学与应用数学（985）</span></div>
-        <div class="id-row"><span>资质</span><span>PMP · CFA 一级 · 中级经济师</span></div>
+        <div class="id-row"><span><span class="zh">现任</span><span class="en">Role</span></span><span><span class="zh">中集集装箱（集团）· 资本管理部</span><span class="en">CIMC Container (Group) · Capital Mgmt.</span></span></div>
+        <div class="id-row"><span><span class="zh">经验</span><span class="en">Exp.</span></span><span><span class="zh">4 年大型产业集团投融资</span><span class="en">4 yrs investment &amp; financing</span></span></div>
+        <div class="id-row"><span><span class="zh">硕士</span><span class="en">Master</span></span><span><span class="zh">台湾大学 · 经济学（QS 54）</span><span class="en">Nat’l Taiwan Univ. · Economics (QS #54)</span></span></div>
+        <div class="id-row"><span><span class="zh">本科</span><span class="en">Bachelor</span></span><span><span class="zh">湖南大学 · 数学与应用数学（985）</span><span class="en">Hunan Univ. · Mathematics (985)</span></span></div>
+        <div class="id-row"><span><span class="zh">资质</span><span class="en">Certs</span></span><span><span class="zh">PMP · CFA 一级 · 中级经济师</span><span class="en">CFA Level I · PMP · Economist</span></span></div>
       </div>
       <div class="id-foot">
         <div class="code">CAPITAL MGMT<br>SHENZHEN · CN</div>
@@ -511,57 +543,57 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">01 · Key Results</div>
-      <h2>用结果说话</h2>
-      <p>每一个数字都来自亲手推动落地的项目。</p>
+      <h2><span class="zh">用结果说话</span><span class="en">Results that speak</span></h2>
+      <p><span class="zh">每一个数字都来自亲手推动落地的项目。</span><span class="en">Every figure comes from a project I personally drove to completion.</span></p>
     </div>
     <div class="metrics">
       <div class="panel spot metric reveal">
-        <div class="val"><span class="num grad" data-count="18">18</span><span class="unit">亿元</span></div>
-        <h3>跨境租赁融资授信</h3>
-        <p>半年内获批，含境外 8 亿元</p>
+        <div class="val"><span class="num grad" data-count="18" data-count-en="1.8" data-dec-en="1">18</span><span class="unit"><span class="zh">亿元</span><span class="en">RMB bn</span></span></div>
+        <h3><span class="zh">跨境租赁融资授信</span><span class="en">Cross-border leasing facilities</span></h3>
+        <p><span class="zh">半年内获批，含境外 8 亿元</span><span class="en">Won in 6 months, incl. RMB 0.8bn offshore</span></p>
       </div>
       <div class="panel spot metric reveal d1">
-        <div class="val"><span class="num grad" data-count="6000">6000</span><span class="unit">万元+</span></div>
-        <h3>项目公司年增利润</h3>
-        <p>跨境租赁架构实现 13% 增值税减免</p>
+        <div class="val"><span class="num grad" data-count="6000" data-count-en="60">6000</span><span class="unit"><span class="zh">万元+</span><span class="en">RMB m+</span></span></div>
+        <h3><span class="zh">项目公司年增利润</span><span class="en">Annual profit uplift</span></h3>
+        <p><span class="zh">跨境租赁架构实现 13% 增值税减免</span><span class="en">13% VAT exemption via the cross-border lease structure</span></p>
       </div>
       <div class="panel spot metric reveal d2">
-        <div class="val"><span class="num grad" data-count="4386">4386</span><span class="unit">万元</span></div>
-        <h3>节约租金</h3>
-        <p>利率 5.3%→4.4%，租期 8→12 年</p>
+        <div class="val"><span class="num grad" data-count="4386" data-count-en="43.9" data-dec-en="1">4386</span><span class="unit"><span class="zh">万元</span><span class="en">RMB m</span></span></div>
+        <h3><span class="zh">节约租金</span><span class="en">Rent saved</span></h3>
+        <p><span class="zh">利率 5.3%→4.4%，租期 8→12 年</span><span class="en">Rate 5.3% → 4.4%, tenor 8 → 12 years</span></p>
       </div>
       <div class="panel spot metric reveal">
-        <div class="val"><span class="num grad" data-count="17.6" data-dec="1">17.6</span><span class="unit">万套</span></div>
-        <h3>橡胶箱全球租赁计划执行</h3>
-        <p>融资约 3.3 亿元，含境外 1.4 亿元</p>
+        <div class="val"><span class="num grad" data-count="17.6" data-dec="1" data-count-en="176">17.6</span><span class="unit"><span class="zh">万套</span><span class="en">k sets</span></span></div>
+        <h3><span class="zh">橡胶箱全球租赁计划执行</span><span class="en">Units leased globally</span></h3>
+        <p><span class="zh">融资约 3.3 亿元，含境外 1.4 亿元</span><span class="en">~RMB 330m drawn, incl. RMB 140m offshore</span></p>
       </div>
       <div class="panel spot metric reveal d1">
-        <div class="val"><span class="num grad" data-count="33">33</span><span class="unit">座</span></div>
-        <h3>亏损充电站盘活</h3>
-        <p>预计由无法回本转为整体 8 年回本</p>
+        <div class="val"><span class="num grad" data-count="33">33</span><span class="unit"><span class="zh">座</span><span class="en">stations</span></span></div>
+        <h3><span class="zh">亏损充电站盘活</span><span class="en">Charging stations turned around</span></h3>
+        <p><span class="zh">预计由无法回本转为整体 8 年回本</span><span class="en">From no payback to a projected 8-year payback</span></p>
       </div>
       <div class="panel spot metric reveal d2">
-        <div class="val"><span class="num grad" data-count="25">25</span><span class="unit">亿元</span></div>
-        <h3>产业投资计划书</h3>
-        <p>获当地政府内部审批通过</p>
+        <div class="val"><span class="num grad" data-count="25" data-count-en="2.5" data-dec-en="1">25</span><span class="unit"><span class="zh">亿元</span><span class="en">RMB bn</span></span></div>
+        <h3><span class="zh">产业投资计划书</span><span class="en">Industrial investment plan</span></h3>
+        <p><span class="zh">获当地政府内部审批通过</span><span class="en">Approved internally by the local government</span></p>
       </div>
     </div>
 
     <div class="strengths">
       <div class="panel spot strength reveal">
         <div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
-        <h3>产融结合</h3>
-        <p>4 年大型产业集团投融资经验，贯通融资租赁、产业基金募投、存量资产盘活、股权治理与私募基金合规。</p>
+        <h3><span class="zh">产融结合</span><span class="en">Industry × Finance</span></h3>
+        <p><span class="zh">4 年大型产业集团投融资经验，贯通融资租赁、产业基金募投、存量资产盘活、股权治理与私募基金合规。</span><span class="en">4 years at a large industrial group across lease finance, industrial fund raising and investment, asset turnaround, equity governance and private fund compliance.</span></p>
       </div>
       <div class="panel spot strength reveal d1">
         <div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h3>创新突破</h3>
-        <p>落地国内首例自贸区 SPV 出口退税集装箱经营性租赁，获批授信 18 亿元，公司年增利润超 6000 万元。</p>
+        <h3><span class="zh">创新突破</span><span class="en">Structuring Innovation</span></h3>
+        <p><span class="zh">落地国内首例自贸区 SPV 出口退税集装箱经营性租赁，获批授信 18 亿元，公司年增利润超 6000 万元。</span><span class="en">Delivered China’s first FTZ-SPV export-tax-rebate container operating lease: RMB 1.8bn in facilities and RMB 60m+ annual profit uplift.</span></p>
       </div>
       <div class="panel spot strength reveal d2">
         <div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>综合素质</h3>
-        <p>研究与文字功底扎实，心理素质强、善于多方协调，能统筹政府、金融机构等多方资源推动项目落地。</p>
+        <h3><span class="zh">综合素质</span><span class="en">Well-rounded</span></h3>
+        <p><span class="zh">研究与文字功底扎实，心理素质强、善于多方协调，能统筹政府、金融机构等多方资源推动项目落地。</span><span class="en">Strong researcher and writer, resilient under pressure, and adept at aligning government, financial institutions and other stakeholders to get deals done.</span></p>
       </div>
     </div>
   </div>
@@ -572,13 +604,13 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">02 · Featured Cases</div>
-      <h2>代表项目</h2>
-      <p>从交易结构设计到落地执行，两个最能说明能力的案例。</p>
+      <h2><span class="zh">代表项目</span><span class="en">Featured Cases</span></h2>
+      <p><span class="zh">从交易结构设计到落地执行，两个最能说明能力的案例。</span><span class="en">From deal structuring to execution — the two projects that best show how I work.</span></p>
     </div>
 
     <article class="panel case reveal">
       <div class="case-vis">
-        <svg class="orbit" viewBox="0 0 380 320" role="img" aria-label="协调五方论证跨境租赁架构">
+        <svg class="orbit" viewBox="0 0 380 320" role="img" aria-label="Five parties aligned on the cross-border lease structure">
           <defs>
             <radialGradient id="coreG" cx="50%" cy="38%" r="65%"><stop offset="0" stop-color="#2b52a8"/><stop offset="1" stop-color="#16306b"/></radialGradient>
             <linearGradient id="coreS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b8193"/><stop offset="1" stop-color="#1f5fd6"/></linearGradient>
@@ -596,39 +628,49 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
           <circle class="pk" r="3"><animateMotion dur="2.4s" begin="1.5s" repeatCount="indefinite" path="M121 255 L190 160"/></circle>
           <circle class="pk" r="3"><animateMotion dur="2.4s" begin="2s" repeatCount="indefinite" path="M78 124 L190 160"/></circle>
           <circle cx="190" cy="160" r="62" fill="url(#coreG)" stroke="url(#coreS)" stroke-width="1.6"/>
-          <text class="t1" x="190" y="156">跨境租赁架构</text>
-          <text class="t2" x="190" y="178">自贸区 SPV</text>
-          <g class="node" transform="translate(190 42)"><rect x="-46" y="-16" width="92" height="32" rx="16"/><text>保税区政府</text></g>
-          <g class="node" transform="translate(302 124)"><rect x="-40" y="-16" width="80" height="32" rx="16"/><text>金租公司</text></g>
-          <g class="node" transform="translate(259 255)"><rect x="-36" y="-16" width="72" height="32" rx="16"/><text>供应商</text></g>
-          <g class="node" transform="translate(121 255)"><rect x="-36" y="-16" width="72" height="32" rx="16"/><text>审计师</text></g>
-          <g class="node" transform="translate(78 124)"><rect x="-40" y="-16" width="80" height="32" rx="16"/><text>内部财务</text></g>
-          <text class="cap" x="190" y="306">协调五方反复论证 → 国内首例落地</text>
+          <g class="zh"><text class="t1" x="190" y="156">跨境租赁架构</text><text class="t2" x="190" y="178">自贸区 SPV</text></g>
+          <g class="en"><text class="t1 sm" x="190" y="148">Cross-border</text><text class="t1 sm" x="190" y="165">Lease Structure</text><text class="t2" x="190" y="185">FTZ SPV</text></g>
+          <g class="zh">
+            <g class="node" transform="translate(190 42)"><rect x="-46" y="-16" width="92" height="32" rx="16"/><text>保税区政府</text></g>
+            <g class="node" transform="translate(302 124)"><rect x="-40" y="-16" width="80" height="32" rx="16"/><text>金租公司</text></g>
+            <g class="node" transform="translate(259 255)"><rect x="-36" y="-16" width="72" height="32" rx="16"/><text>供应商</text></g>
+            <g class="node" transform="translate(121 255)"><rect x="-36" y="-16" width="72" height="32" rx="16"/><text>审计师</text></g>
+            <g class="node" transform="translate(78 124)"><rect x="-40" y="-16" width="80" height="32" rx="16"/><text>内部财务</text></g>
+            <text class="cap" x="190" y="306">协调五方反复论证 → 国内首例落地</text>
+          </g>
+          <g class="en">
+            <g class="node" transform="translate(190 42)"><rect x="-64" y="-16" width="128" height="32" rx="16"/><text>Bonded-zone Gov’t</text></g>
+            <g class="node" transform="translate(302 124)"><rect x="-38" y="-16" width="76" height="32" rx="16"/><text>Lessors</text></g>
+            <g class="node" transform="translate(259 255)"><rect x="-42" y="-16" width="84" height="32" rx="16"/><text>Suppliers</text></g>
+            <g class="node" transform="translate(121 255)"><rect x="-40" y="-16" width="80" height="32" rx="16"/><text>Auditors</text></g>
+            <g class="node" transform="translate(78 124)"><rect x="-38" y="-16" width="76" height="32" rx="16"/><text>Finance</text></g>
+            <text class="cap" x="190" y="306">Five parties aligned → China’s first</text>
+          </g>
         </svg>
       </div>
       <div class="case-body">
-        <div class="pills"><span class="pill hot">国内首例</span><span class="pill">中集运载科技 · 投资部</span><span class="pill">2022–2023</span></div>
-        <h3>自贸区 SPV 出口退税<br>集装箱经营性租赁</h3>
-        <p class="desc">入职即接手循环橡胶箱全球租赁项目，负责融资方案设计、申请、执行及投后管理；协调多方反复论证跨境租赁架构，实现 <b style="color:var(--navy)">13% 增值税减免</b>。</p>
+        <div class="pills"><span class="pill hot"><span class="zh">国内首例</span><span class="en">China’s first</span></span><span class="pill"><span class="zh">中集运载科技 · 投资部</span><span class="en">CIMC Transportation Tech · Investment</span></span><span class="pill">2022–2023</span></div>
+        <h3><span class="zh">自贸区 SPV 出口退税<br>集装箱经营性租赁</span><span class="en">FTZ-SPV Export Tax Rebate<br>Container Operating Lease</span></h3>
+        <p class="desc"><span class="zh">入职即接手循环橡胶箱全球租赁项目，负责融资方案设计、申请、执行及投后管理；协调多方反复论证跨境租赁架构，实现 <b style="color:var(--navy)">13% 增值税减免</b>。</span><span class="en">Owned financing from day one for a global lease program of returnable rubber packaging — design, application, execution and post-deal management — and aligned five parties on a cross-border lease structure that achieved a <b style="color:var(--navy)">13% VAT exemption</b>.</span></p>
         <div class="cmp">
           <div class="cmp-row">
-            <div class="cmp-top"><span>年化利率</span><b><s>5.3%</s> → 4.4%</b></div>
+            <div class="cmp-top"><span><span class="zh">年化利率</span><span class="en">Annual rate</span></span><b><s>5.3%</s> → 4.4%</b></div>
             <div class="bars"><div class="bar before"><i style="--w:100%"></i></div><div class="bar after"><i style="--w:83%"></i></div></div>
           </div>
           <div class="cmp-row">
-            <div class="cmp-top"><span>租期</span><b><s>8 年</s> → 12 年</b></div>
+            <div class="cmp-top"><span><span class="zh">租期</span><span class="en">Tenor</span></span><b><span class="zh"><s>8 年</s> → 12 年</span><span class="en"><s>8 yrs</s> → 12 yrs</span></b></div>
             <div class="bars"><div class="bar before"><i style="--w:66.7%"></i></div><div class="bar after"><i style="--w:100%"></i></div></div>
           </div>
         </div>
         <div class="res">
-          <div><b class="grad">18 亿元</b><span>融资授信（含境外 8 亿）</span></div>
-          <div><b class="grad">6000 万+</b><span>项目公司年增利润</span></div>
-          <div><b class="grad">4386 万元</b><span>节约租金</span></div>
-          <div><b class="grad">3.3 亿元</b><span>已执行融资（含境外 1.4 亿）</span></div>
+          <div><b class="grad"><span class="zh">18 亿元</span><span class="en">RMB 1.8bn</span></b><span><span class="zh">融资授信（含境外 8 亿）</span><span class="en">Facilities (RMB 0.8bn offshore)</span></span></div>
+          <div><b class="grad"><span class="zh">6000 万+</span><span class="en">RMB 60m+</span></b><span><span class="zh">项目公司年增利润</span><span class="en">Annual profit uplift</span></span></div>
+          <div><b class="grad"><span class="zh">4386 万元</span><span class="en">RMB 43.9m</span></b><span><span class="zh">节约租金</span><span class="en">Rent saved</span></span></div>
+          <div><b class="grad"><span class="zh">3.3 亿元</span><span class="en">RMB 330m</span></b><span><span class="zh">已执行融资（含境外 1.4 亿）</span><span class="en">Drawn (RMB 140m offshore)</span></span></div>
         </div>
         <div class="awards">
-          <span class="award"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>连续两年获公司团队突破奖</span>
-          <span class="award"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>金租公司内部创新特等奖</span>
+          <span class="award"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span class="zh">连续两年获公司团队突破奖</span><span class="en">Team Breakthrough Award, two years running</span></span>
+          <span class="award"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span class="zh">金租公司内部创新特等奖</span><span class="en">Lessor’s Innovation Grand Prize</span></span>
         </div>
       </div>
     </article>
@@ -636,22 +678,22 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
     <article class="panel case rev reveal">
       <div class="case-vis">
         <div class="flow">
-          <div class="step bad"><div class="k">BEFORE</div><b>33 座亏损充电站</b><span>重庆 · 无法回本</span></div>
+          <div class="step bad"><div class="k">BEFORE</div><b><span class="zh">33 座亏损充电站</span><span class="en">33 loss-making stations</span></b><span><span class="zh">重庆 · 无法回本</span><span class="en">Chongqing · no payback</span></span></div>
           <div class="arrow"></div>
-          <div class="step"><div class="k">SOLUTION</div><b>专项基金 + 专业运营方</b><span>新投资转向蓝海重卡充电</span></div>
+          <div class="step"><div class="k">SOLUTION</div><b><span class="zh">专项基金 + 专业运营方</span><span class="en">Fund + professional operator</span></b><span><span class="zh">新投资转向蓝海重卡充电</span><span class="en">New capital pivoted to heavy-truck charging</span></span></div>
           <div class="arrow"></div>
-          <div class="step good"><div class="k">AFTER · 预计</div><b>整体 8 年回本</b><span>一期实缴 1500 万元已完成</span></div>
+          <div class="step good"><div class="k"><span class="zh">AFTER · 预计</span><span class="en">AFTER · PROJECTED</span></div><b><span class="zh">整体 8 年回本</span><span class="en">8-year payback</span></b><span><span class="zh">一期实缴 1500 万元已完成</span><span class="en">RMB 15m phase-1 capital paid in</span></span></div>
         </div>
       </div>
       <div class="case-body">
-        <div class="pills"><span class="pill hot">存量资产盘活</span><span class="pill">中集集装箱 · 资本管理部</span><span class="pill">2024–至今</span></div>
-        <h3>重庆 33 座亏损充电站盘活</h3>
-        <p class="desc">组织金融机构及专家多轮调研测算，设计「专项基金 + 专业运营方」盘活方案，并推动新投资转向蓝海重卡充电。</p>
+        <div class="pills"><span class="pill hot"><span class="zh">存量资产盘活</span><span class="en">Asset turnaround</span></span><span class="pill"><span class="zh">中集集装箱 · 资本管理部</span><span class="en">CIMC Container · Capital Mgmt.</span></span><span class="pill"><span class="zh">2024–至今</span><span class="en">2024–Present</span></span></div>
+        <h3><span class="zh">重庆 33 座亏损充电站盘活</span><span class="en">Turnaround of 33 Loss-making Charging Stations in Chongqing</span></h3>
+        <p class="desc"><span class="zh">组织金融机构及专家多轮调研测算，设计「专项基金 + 专业运营方」盘活方案，并推动新投资转向蓝海重卡充电。</span><span class="en">Organized several rounds of diligence and modeling with financial institutions and experts, designed a “special-purpose fund + professional operator” rescue plan, and pivoted new capital to heavy-truck charging, a blue-ocean segment.</span></p>
         <ul class="checks">
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>执笔投审会、董事长及外部投资人材料，<b>方案获内外部审批</b></li>
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>已完成<b>一期实缴 1500 万元</b></li>
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>锁定金租直租合作（约 <b>3 亿元无担保额度</b>待批）</li>
-          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>预计 33 座站由无法回本转为<b>整体 8 年回本</b></li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">执笔投审会、董事长及外部投资人材料，<b>方案获内外部审批</b></span><span class="en">Wrote the IC, Chairman and investor papers — <b>approved internally and externally</b></span></li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">已完成<b>一期实缴 1500 万元</b></span><span class="en"><b>RMB 15m phase-1 capital</b> paid in</span></li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">锁定金租直租合作（约 <b>3 亿元无担保额度</b>待批）</span><span class="en">Direct-lease partnership locked in (<b>~RMB 300m unsecured line</b> pending approval)</span></li>
+          <li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">预计 33 座站由无法回本转为<b>整体 8 年回本</b></span><span class="en">33 stations projected to reach an <b>8-year payback</b>, from none before</span></li>
         </ul>
       </div>
     </article>
@@ -663,83 +705,83 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">03 · Experience</div>
-      <h2>工作经历</h2>
+      <h2><span class="zh">工作经历</span><span class="en">Experience</span></h2>
     </div>
     <div class="tl">
       <div class="job reveal">
-        <div class="job-date">2024.01 — 至今<br><span class="now">CURRENT</span></div>
+        <div class="job-date"><span class="zh">2024.01 — 至今</span><span class="en">Jan 2024 — Present</span><br><span class="now">CURRENT</span></div>
         <div class="panel spot job-card">
           <div class="job-head">
-            <div><div class="job-co">中集集装箱（集团）有限公司</div><div class="job-dept">资本管理部（集团内部调动）</div></div>
-            <span class="job-title">资本管理主管</span>
+            <div><div class="job-co"><span class="zh">中集集装箱（集团）有限公司</span><span class="en">CIMC Container (Group) Co., Ltd.</span></div><div class="job-dept"><span class="zh">资本管理部（集团内部调动）</span><span class="en">Capital Management Dept. · CIMC Group, the world’s largest container manufacturer (SZSE: 000039; HKEX: 2039)</span></div></div>
+            <span class="job-title"><span class="zh">资本管理主管</span><span class="en">Capital Management Supervisor</span></span>
           </div>
           <ul>
-            <li><span class="lt">存量资产盘活：</span>针对重庆 <em>33 座</em>亏损充电站，组织金融机构及专家多轮调研测算，设计“专项基金 + 专业运营方”盘活方案，推动新投资转向蓝海重卡充电；执笔投审会、董事长及外部投资人材料，方案获内外部审批。已完成一期实缴 <em>1500 万元</em>，锁定金租直租合作（约 <em>3 亿元</em>无担保额度待批），预计 33 座站由无法回本转为整体 <em>8 年回本</em>。</li>
-            <li><span class="lt">基金募资：</span>为充电站、模块化数据中心基金编制募资材料、拓展外部 LP，对接扬州、宁波、昆明、重庆国资平台及中铁十六局；整合大连、扬州、江门等多地工厂绿电需求，推动以光伏 / 风电项目资源置换合作方出资。</li>
-            <li><span class="lt">产融协同：</span>起草集团资本运作管理制度；对接模块化数据中心、模块化建筑、环保装备、冷链装备等多家下属企业，联合金融机构定制资产融资方案；储能低价竞争下依托战略资源，促成中集储能与华能景顺签约，实现 <em>2400 万元</em>销售。</li>
-            <li><span class="lt">参股企业治理：</span>搭建参股企业统一管理平台，完成 <em>10 家</em>企业股权转让至平台集中管理、<em>2 家</em>无亏损退出、1 家注销；识别参股企业章程漏洞并及时与大股东交涉，推动完成章程修订与决策流程完善，维护公司小股东权益。</li>
-            <li><span class="lt">私募基金合规：</span>独立负责私募基金管理人中集鹏丰及旗下产品信息报送、披露与资质维护，<em>连续 4 年</em>合规运营；管理人法定代表人持股新规生效前 1 个月内极限完成变更；基金延期被中基协 3 次拒绝后持续沟通反馈，最终完成延期。</li>
+            <li><span class="zh"><span class="lt">存量资产盘活：</span>针对重庆 <em>33 座</em>亏损充电站，组织金融机构及专家多轮调研测算，设计“专项基金 + 专业运营方”盘活方案，推动新投资转向蓝海重卡充电；执笔投审会、董事长及外部投资人材料，方案获内外部审批。已完成一期实缴 <em>1500 万元</em>，锁定金租直租合作（约 <em>3 亿元</em>无担保额度待批），预计 33 座站由无法回本转为整体 <em>8 年回本</em>。</span><span class="en"><span class="lt">Asset turnaround:</span> Designed a fund-plus-operator rescue of <em>33</em> loss-making EV charging stations and pivoted new capital to heavy-truck charging; wrote IC, Chairman and investor papers, winning internal and external approval. <em>RMB 15m</em> phase-1 capital paid in; <em>~RMB 300m</em> unsecured direct-lease line pending approval; <em>8-year payback</em> projected (none before).</span></li>
+            <li><span class="zh"><span class="lt">基金募资：</span>为充电站、模块化数据中心基金编制募资材料、拓展外部 LP，对接扬州、宁波、昆明、重庆国资平台及中铁十六局；整合大连、扬州、江门等多地工厂绿电需求，推动以光伏 / 风电项目资源置换合作方出资。</span><span class="en"><span class="lt">Fundraising:</span> Prepared LP materials and sourced investors for EV-charging and modular data-center funds, engaging China Railway 16th Bureau Group and state-owned platforms in Yangzhou, Ningbo, Kunming and Chongqing; bundled green-power demand from group plants across several cities to pursue solar/wind resource swaps for partner capital.</span></li>
+            <li><span class="zh"><span class="lt">产融协同：</span>起草集团资本运作管理制度；对接模块化数据中心、模块化建筑、环保装备、冷链装备等多家下属企业，联合金融机构定制资产融资方案；储能低价竞争下依托战略资源，促成中集储能与华能景顺签约，实现 <em>2400 万元</em>销售。</span><span class="en"><span class="lt">Industry–finance synergy:</span> Drafted the group’s capital operations policy; structured asset-based financing with lenders for subsidiaries in modular data centers and buildings, environmental and cold-chain equipment; leveraged group relationships amid a price war to close a CIMC Energy Storage–Huaneng Jingshun deal generating <em>RMB 24m</em> in sales.</span></li>
+            <li><span class="zh"><span class="lt">参股企业治理：</span>搭建参股企业统一管理平台，完成 <em>10 家</em>企业股权转让至平台集中管理、<em>2 家</em>无亏损退出、1 家注销；识别参股企业章程漏洞并及时与大股东交涉，推动完成章程修订与决策流程完善，维护公司小股东权益。</span><span class="en"><span class="lt">Equity governance:</span> Built a unified platform for minority holdings, transferring <em>10</em> companies into it, exiting <em>2</em> at no loss and deregistering 1; identified a gap in an investee’s articles of association and negotiated amendments and decision-process fixes with the majority shareholder to protect the company’s minority-shareholder rights.</span></li>
+            <li><span class="zh"><span class="lt">私募基金合规：</span>独立负责私募基金管理人中集鹏丰及旗下产品信息报送、披露与资质维护，<em>连续 4 年</em>合规运营；管理人法定代表人持股新规生效前 1 个月内极限完成变更；基金延期被中基协 3 次拒绝后持续沟通反馈，最终完成延期。</span><span class="en"><span class="lt">Private fund compliance:</span> Independently ran AMAC filings, disclosures and licensing for private fund manager CIMC Pengfeng and its funds, with <em>4 consecutive years</em> of compliant operation; completed a legal-representative change within one month ahead of new AMAC shareholding rules; secured a fund extension after <em>three AMAC rejections</em>.</span></li>
           </ul>
         </div>
       </div>
 
       <div class="job reveal">
-        <div class="job-date">2022.07 — 2023.12</div>
+        <div class="job-date"><span class="zh">2022.07 — 2023.12</span><span class="en">Jul 2022 — Dec 2023</span></div>
         <div class="panel spot job-card">
           <div class="job-head">
-            <div><div class="job-co">中集运载科技有限公司</div><div class="job-dept">投资部</div></div>
-            <span class="job-title">分析员</span>
+            <div><div class="job-co"><span class="zh">中集运载科技有限公司</span><span class="en">CIMC Transportation Technology Co., Ltd.</span></div><div class="job-dept"><span class="zh">投资部</span><span class="en">Investment Dept.</span></div></div>
+            <span class="job-title"><span class="zh">分析员</span><span class="en">Investment Analyst</span></span>
           </div>
           <ul>
-            <li><span class="lt">跨境租赁融资：</span>入职即接手循环橡胶箱全球租赁项目，负责融资方案设计、申请、执行及投后管理：半年内获金租公司融资额度折合 <em>18 亿元</em>（含境外 8 亿元），执行 <em>17.6 万套</em>租赁计划、融资约 <em>3.3 亿元</em>（含境外 1.4 亿元）；争取年化利率由 5.3% 降至 <em>4.4%</em>、租期由 8 年延至 <em>12 年</em>，节约租金约 <em>4386 万元</em>。</li>
-            <li><span class="lt">模式创新：</span>协调保税区政府、金租公司、供应商、审计师及内部财务反复论证跨境租赁架构，实现 <em>13%</em> 增值税减免，项目公司报表利润年增超 <em>6000 万元</em>；项目成为国内首例通过自贸区 SPV 实现出口退税的集装箱类经营性租赁业务，连续两年获公司团队突破奖，也获金租公司内部创新特等奖，与金租公司建立深厚合作关系。</li>
-            <li><span class="lt">股权融资：</span>按 <em>10 亿美元</em>独角兽估值对接多家金融机构推进 <em>4000 万元</em>引战，准备尽调及路演材料、审查投资协议；争取深圳某区 <em>3500 万元</em>落户扶持、3 折地价及 <em>1000 万元</em>引导基金跟投，获区政府及金融机构投决会通过（无对赌）。</li>
-            <li><span class="lt">产业投资：</span>对接华东某地政府招商局，以动力电池结构件、汽车轻量化材料扩产为切入点，撰写 <em>25 亿元</em>投资计划书，设计以固投争取政府引导基金、设专项基金持有资产并开展并购的方案，获当地政府内部审批通过。</li>
+            <li><span class="zh"><span class="lt">跨境租赁融资：</span>入职即接手循环橡胶箱全球租赁项目，负责融资方案设计、申请、执行及投后管理：半年内获金租公司融资额度折合 <em>18 亿元</em>（含境外 8 亿元），执行 <em>17.6 万套</em>租赁计划、融资约 <em>3.3 亿元</em>（含境外 1.4 亿元）；争取年化利率由 5.3% 降至 <em>4.4%</em>、租期由 8 年延至 <em>12 年</em>，节约租金约 <em>4386 万元</em>。</span><span class="en"><span class="lt">Cross-border lease financing:</span> Owned financing from day one for a global lease program of returnable rubber-transport packaging. Won <em>RMB 1.8bn</em> of leasing lines in 6 months (RMB 0.8bn offshore); drew <em>~RMB 330m</em> (RMB 140m offshore) over <em>176,000</em> sets; cut the rate from 5.3% to <em>4.4%</em> and extended tenor from 8 to <em>12 years</em>, saving <em>~RMB 44m</em> in rent.</span></li>
+            <li><span class="zh"><span class="lt">模式创新：</span>协调保税区政府、金租公司、供应商、审计师及内部财务反复论证跨境租赁架构，实现 <em>13%</em> 增值税减免，项目公司报表利润年增超 <em>6000 万元</em>；项目成为国内首例通过自贸区 SPV 实现出口退税的集装箱类经营性租赁业务，连续两年获公司团队突破奖，也获金租公司内部创新特等奖，与金租公司建立深厚合作关系。</span><span class="en"><span class="lt">Structuring innovation:</span> Aligned bonded-zone authorities, lessors, suppliers, auditors and finance on <em>China’s first</em> cross-border container-type operating lease to obtain export tax rebates via an FTZ SPV, achieving a <em>13%</em> VAT exemption and <em>RMB 60m+</em> yearly profit uplift. Team Breakthrough Award twice; the deal won the lessor’s Innovation Grand Prize.</span></li>
+            <li><span class="zh"><span class="lt">股权融资：</span>按 <em>10 亿美元</em>独角兽估值对接多家金融机构推进 <em>4000 万元</em>引战，准备尽调及路演材料、审查投资协议；争取深圳某区 <em>3500 万元</em>落户扶持、3 折地价及 <em>1000 万元</em>引导基金跟投，获区政府及金融机构投决会通过（无对赌）。</span><span class="en"><span class="lt">Equity financing:</span> Drove an <em>RMB 40m</em> strategic round at a <em>US$1bn</em> unicorn valuation, preparing diligence/roadshow materials and reviewing agreements; negotiated a Shenzhen district package (<em>RMB 35m</em> subsidy, 70% land discount, <em>RMB 10m</em> guidance-fund investment); approved by the district and investors’ ICs with no valuation-adjustment terms.</span></li>
+            <li><span class="zh"><span class="lt">产业投资：</span>对接华东某地政府招商局，以动力电池结构件、汽车轻量化材料扩产为切入点，撰写 <em>25 亿元</em>投资计划书，设计以固投争取政府引导基金、设专项基金持有资产并开展并购的方案，获当地政府内部审批通过。</span><span class="en"><span class="lt">Industrial investment:</span> Authored an <em>RMB 2.5bn</em> investment plan pitched to an East China city’s investment bureau, anchored on EV battery parts and auto lightweight materials, using fixed-asset investment to draw government guidance funds and a special-purpose fund to hold assets and pursue M&amp;A; approved internally by the local government.</span></li>
           </ul>
         </div>
       </div>
 
       <div class="job reveal">
-        <div class="job-date">2020.05 — 2022.04<br><span class="now alt">INTERN</span></div>
+        <div class="job-date"><span class="zh">2020.05 — 2022.04</span><span class="en">May 2020 — Apr 2022</span><br><span class="now alt">INTERN</span></div>
         <div class="panel spot job-card">
           <div class="job-head">
-            <div><div class="job-co">券商研究所实习</div><div class="job-dept">三段卖方研究经历 · 覆盖半导体与金属新材料</div></div>
-            <span class="job-title">分析师助理</span>
+            <div><div class="job-co"><span class="zh">券商研究所实习</span><span class="en">Sell-side Research Internships</span></div><div class="job-dept"><span class="zh">三段卖方研究经历 · 覆盖半导体与金属新材料</span><span class="en">Three brokerage research teams · semiconductors, metals &amp; new materials</span></div></div>
+            <span class="job-title"><span class="zh">分析师助理</span><span class="en">Research Assistant</span></span>
           </div>
           <div class="istats">
-            <div><b>6</b><span>篇深度报告</span></div>
-            <div><b>10</b><span>篇北交所公司点评</span></div>
-            <div><b>6</b><span>篇半年报点评</span></div>
-            <div><b>20+</b><span>篇会议 / 调研 / 专家纪要</span></div>
+            <div><b>6</b><span><span class="zh">篇深度报告</span><span class="en">in-depth reports</span></span></div>
+            <div><b>10</b><span><span class="zh">篇北交所公司点评</span><span class="en">BSE company notes</span></span></div>
+            <div><b>6</b><span><span class="zh">篇半年报点评</span><span class="en">interim-results notes</span></span></div>
+            <div><b>20+</b><span><span class="zh">篇会议 / 调研 / 专家纪要</span><span class="en">meeting &amp; expert-call notes</span></span></div>
           </div>
 
           <div class="isub">
-            <div class="isub-head"><span class="isub-co">德邦证券研究所</span><span class="isub-grp">电子组</span><span class="isub-d">2022.01–2022.04</span></div>
+            <div class="isub-head"><span class="isub-co"><span class="zh">德邦证券研究所</span><span class="en">Tebon Securities</span></span><span class="isub-grp"><span class="zh">电子组</span><span class="en">Electronics Team</span></span><span class="isub-d"><span class="zh">2022.01–2022.04</span><span class="en">Jan 2022 – Apr 2022</span></span></div>
             <ul>
-              <li><span class="lt">独立撰写一篇行业深度：</span>独立撰写车载 MCU 行业深度，着重分析了全球车载 MCU 的竞争格局以及车规级认证的难点，找出我国自给率极低的原因；分析汽车电动化、智能化带来车载 MCU 的新需求，挖掘在当下供给紧张的环境下国产厂商切入的机会，并推荐<em>三家</em>标的。</li>
-              <li><span class="lt">独立测算汽车半导体六大细分行业空间：</span>对车用 MCU、IGBT、SiC、DRAM、NAND、CIS 等<em>六大</em>细分行业空间进行量价拆分，先预测出汽车销量、电动车渗透率、智能驾驶渗透率等，再结合专家、产业调研、贸泽电子等预测出各产品单车搭载量和单价，最终计算出汽车半导体各细分行业的行业空间。</li>
-              <li><span class="lt">独立撰写一篇公司深度：</span>独立撰写国产硅片先锋沪硅产业的深度报告，重点围绕公司募资扩产来顺应全球半导体硅片的需求结构转型、半导体景气周期有望加速客户验证的逻辑来发掘公司的投资亮点。</li>
-              <li><span class="lt">参与策略会提问并整理二十篇纪要：</span>提前撰写问题，在策略会上向董秘提问，并进行现场速记；一共整理了华虹半导体、沪硅产业、芯海科技、华为 IGBT、博世、英飞凌等<em>二十多篇</em>会议 / 调研 / 专家纪要。</li>
+              <li><span class="zh"><span class="lt">独立撰写一篇行业深度：</span>独立撰写车载 MCU 行业深度，着重分析了全球车载 MCU 的竞争格局以及车规级认证的难点，找出我国自给率极低的原因；分析汽车电动化、智能化带来车载 MCU 的新需求，挖掘在当下供给紧张的环境下国产厂商切入的机会，并推荐<em>三家</em>标的。</span><span class="en"><span class="lt">Industry deep-dive (sole author):</span> Wrote an in-depth report on automotive MCUs, analyzing the global competitive landscape and the hurdles of automotive-grade certification to explain China’s very low self-sufficiency; assessed new demand from vehicle electrification and intelligence, identified entry points for domestic suppliers amid tight supply, and recommended <em>three</em> stocks.</span></li>
+              <li><span class="zh"><span class="lt">独立测算汽车半导体六大细分行业空间：</span>对车用 MCU、IGBT、SiC、DRAM、NAND、CIS 等<em>六大</em>细分行业空间进行量价拆分，先预测出汽车销量、电动车渗透率、智能驾驶渗透率等，再结合专家、产业调研、贸泽电子等预测出各产品单车搭载量和单价，最终计算出汽车半导体各细分行业的行业空间。</span><span class="en"><span class="lt">Sized <em>six</em> auto-semiconductor segments:</span> Built volume × price models for automotive MCU, IGBT, SiC, DRAM, NAND and CIS — first forecasting vehicle sales, EV penetration and smart-driving penetration, then estimating content per vehicle and unit prices from expert calls, industry checks and Mouser data to derive each segment’s market size.</span></li>
+              <li><span class="zh"><span class="lt">独立撰写一篇公司深度：</span>独立撰写国产硅片先锋沪硅产业的深度报告，重点围绕公司募资扩产来顺应全球半导体硅片的需求结构转型、半导体景气周期有望加速客户验证的逻辑来发掘公司的投资亮点。</span><span class="en"><span class="lt">Company deep-dive (sole author):</span> Wrote an in-depth report on National Silicon Industry Group (NSIG), China’s silicon-wafer pioneer, building the investment case around capacity expansion funded by its equity raise to match the global shift in wafer demand, and an industry up-cycle expected to speed customer qualification.</span></li>
+              <li><span class="zh"><span class="lt">参与策略会提问并整理二十篇纪要：</span>提前撰写问题，在策略会上向董秘提问，并进行现场速记；一共整理了华虹半导体、沪硅产业、芯海科技、华为 IGBT、博世、英飞凌等<em>二十多篇</em>会议 / 调研 / 专家纪要。</span><span class="en"><span class="lt">Strategy conferences &amp; notes:</span> Prepared questions, questioned board secretaries at strategy conferences and took live notes; compiled <em>20+</em> meeting, site-visit and expert-call notes covering Hua Hong Semiconductor, NSIG, Chipsea, Huawei IGBT, Bosch, Infineon and others.</span></li>
             </ul>
           </div>
 
           <div class="isub">
-            <div class="isub-head"><span class="isub-co">申万宏源证券研究所</span><span class="isub-grp">专精特新组</span><span class="isub-d">2021.09–2022.01</span></div>
+            <div class="isub-head"><span class="isub-co"><span class="zh">申万宏源证券研究所</span><span class="en">Shenwan Hongyuan Securities</span></span><span class="isub-grp"><span class="zh">专精特新组</span><span class="en">Specialized &amp; Innovative SMEs Team</span></span><span class="isub-d"><span class="zh">2021.09–2022.01</span><span class="en">Sep 2021 – Jan 2022</span></span></div>
             <ul>
-              <li><span class="lt">半导体行业分析：</span>通过 WSTS、Yole、Semi、IC Insights 等网站搜集半导体行业数据，从上游晶圆厂的设备支出增速、产能利用率、涨价情况、芯片交期等方面，重点分析了半导体行业的周期性，并分析了模拟 IC、电源管理 IC、TWS 耳机、功率器件等细分行业的需求。</li>
-              <li><span class="lt">独立撰写一篇公司深度：</span>独立撰写模拟芯片小巨人南麟电子的深度报告，重点论述了公司自建封测厂在产品交期、质量、成本上的优势，以及未来研发 SoC &amp; SiP 的战略；分析了以 TWS 为代表的消费电子增量市场和芯片缺货对公司的驱动。</li>
-              <li><span class="lt">撰写十篇北交所公司点评：</span>挖掘公司财务、业务、行业的亮点，撰写 <em>10 篇</em>北交所上市公司的投资点评。</li>
-              <li><span class="lt">周报更新 &amp; 申万行业分类：</span>用 Choice 函数提取每周新三板数百家公司的数据并用 Python 处理，并更新周报；寻找新三板公司的 A 股对标公司，比较主营业务，对 <em>400 家</em>新三板公司进行申万三级行业分类。</li>
+              <li><span class="zh"><span class="lt">半导体行业分析：</span>通过 WSTS、Yole、Semi、IC Insights 等网站搜集半导体行业数据，从上游晶圆厂的设备支出增速、产能利用率、涨价情况、芯片交期等方面，重点分析了半导体行业的周期性，并分析了模拟 IC、电源管理 IC、TWS 耳机、功率器件等细分行业的需求。</span><span class="en"><span class="lt">Semiconductor industry analysis:</span> Gathered data from WSTS, Yole, SEMI, IC Insights and others to analyze the semiconductor cycle through fab capex growth, utilization, price hikes and chip lead times, and assessed demand in analog ICs, power-management ICs, TWS earbuds and power devices.</span></li>
+              <li><span class="zh"><span class="lt">独立撰写一篇公司深度：</span>独立撰写模拟芯片小巨人南麟电子的深度报告，重点论述了公司自建封测厂在产品交期、质量、成本上的优势，以及未来研发 SoC &amp; SiP 的战略；分析了以 TWS 为代表的消费电子增量市场和芯片缺货对公司的驱动。</span><span class="en"><span class="lt">Company deep-dive (sole author):</span> Wrote an in-depth report on analog-chip “little giant” Nanlin Electronics, highlighting the delivery, quality and cost advantages of its in-house packaging and testing plant and its SoC &amp; SiP R&amp;D strategy; analyzed how TWS-led consumer-electronics growth and chip shortages drive the business.</span></li>
+              <li><span class="zh"><span class="lt">撰写十篇北交所公司点评：</span>挖掘公司财务、业务、行业的亮点，撰写 <em>10 篇</em>北交所上市公司的投资点评。</span><span class="en"><span class="lt">Beijing Stock Exchange notes:</span> Wrote <em>10</em> investment notes on BSE-listed companies, highlighting financial, business and industry strengths.</span></li>
+              <li><span class="zh"><span class="lt">周报更新 &amp; 申万行业分类：</span>用 Choice 函数提取每周新三板数百家公司的数据并用 Python 处理，并更新周报；寻找新三板公司的 A 股对标公司，比较主营业务，对 <em>400 家</em>新三板公司进行申万三级行业分类。</span><span class="en"><span class="lt">Weekly reports &amp; SWS classification:</span> Pulled weekly data on hundreds of NEEQ companies with Choice functions and processed it in Python to update weekly reports; matched NEEQ companies with A-share peers by main business and assigned SWS Level-3 industry classifications to <em>400</em> of them.</span></li>
             </ul>
           </div>
 
           <div class="isub">
-            <div class="isub-head"><span class="isub-co">西南证券研究所</span><span class="isub-grp">金属新材料组</span><span class="isub-d">2020.05–2020.09</span></div>
+            <div class="isub-head"><span class="isub-co"><span class="zh">西南证券研究所</span><span class="en">Southwest Securities</span></span><span class="isub-grp"><span class="zh">金属新材料组</span><span class="en">Metals &amp; New Materials Team</span></span><span class="isub-d"><span class="zh">2020.05–2020.09</span><span class="en">May 2020 – Sep 2020</span></span></div>
             <ul>
-              <li><span class="lt">铜行业分析：</span>通过 SMM、ICSG、USGS 等网站搜集铜行业数据，建立铜分析构架，从产业链结构、资源分布、原材料价格、产能释放、需求缺口、宏观经济等方面，进行供需平衡预测，并对铜价、铜加工费进行展望。</li>
-              <li><span class="lt">独立撰写三篇公司深度：</span>独立撰写两家铜基新材料公司博威合金、楚江新材和一家工业用铜公司云南铜业的深度报告，重点分析了公司的发展历程、股权结构、主营业务、产能产量、财务状况、行业驱动、发展趋势等。</li>
-              <li><span class="lt">估值建模：</span>对公司业务进行拆分，通过预估产能、原材料价格、销售价格、毛利率等进行盈利预测；用绝对估值法估算出公司每股内在价值，用相对估值法估算出公司 PE 以及目标价。</li>
-              <li><span class="lt">撰写六篇半年报点评：</span>独立撰写有色行业半年报点评以及博威合金、云南铜业、湖南黄金、银泰黄金、紫金矿业等公司半年报点评，涉及行业点评、公司点评、亮点介绍、变动原因分析以及盈利预测调整。</li>
+              <li><span class="zh"><span class="lt">铜行业分析：</span>通过 SMM、ICSG、USGS 等网站搜集铜行业数据，建立铜分析构架，从产业链结构、资源分布、原材料价格、产能释放、需求缺口、宏观经济等方面，进行供需平衡预测，并对铜价、铜加工费进行展望。</span><span class="en"><span class="lt">Copper industry analysis:</span> Collected data from SMM, ICSG, USGS and others, built a copper analysis framework, and forecast the supply-demand balance across industry-chain structure, resource distribution, raw-material prices, capacity release, demand gaps and macro conditions, with outlooks for copper prices and processing fees.</span></li>
+              <li><span class="zh"><span class="lt">独立撰写三篇公司深度：</span>独立撰写两家铜基新材料公司博威合金、楚江新材和一家工业用铜公司云南铜业的深度报告，重点分析了公司的发展历程、股权结构、主营业务、产能产量、财务状况、行业驱动、发展趋势等。</span><span class="en"><span class="lt">Three company deep-dives (sole author):</span> Wrote in-depth reports on copper-based new-materials makers Boway Alloy and Truchum Advanced Materials and on industrial copper producer Yunnan Copper, covering history, shareholding, business lines, capacity and output, financials, industry drivers and outlook.</span></li>
+              <li><span class="zh"><span class="lt">估值建模：</span>对公司业务进行拆分，通过预估产能、原材料价格、销售价格、毛利率等进行盈利预测；用绝对估值法估算出公司每股内在价值，用相对估值法估算出公司 PE 以及目标价。</span><span class="en"><span class="lt">Valuation modeling:</span> Broke down business lines and forecast earnings from capacity, raw-material prices, selling prices and gross margins; estimated intrinsic value per share with absolute valuation, and P/E and target prices with relative valuation.</span></li>
+              <li><span class="zh"><span class="lt">撰写六篇半年报点评：</span>独立撰写有色行业半年报点评以及博威合金、云南铜业、湖南黄金、银泰黄金、紫金矿业等公司半年报点评，涉及行业点评、公司点评、亮点介绍、变动原因分析以及盈利预测调整。</span><span class="en"><span class="lt">Interim-results notes:</span> Wrote <em>6</em> interim-results notes on the non-ferrous metals sector and on Boway Alloy, Yunnan Copper, Hunan Gold, Yintai Gold, Zijin Mining and others, covering highlights, drivers of change and earnings-forecast revisions.</span></li>
             </ul>
           </div>
         </div>
@@ -754,26 +796,24 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
     <div class="reveal">
       <div class="sec-head" style="margin-bottom:0">
         <div class="kicker">04 · Ask My Resume</div>
-        <h2>有问题？<br>直接问我的简历</h2>
-        <p>用自然语言提问即可，例如「做过哪些融资？」「英语怎么样？」。每个回答都标注出处，方便核对。</p>
+        <h2><span class="zh">有问题？<br>直接问我的简历</span><span class="en">Questions?<br>Just ask my resume</span></h2>
+        <p><span class="zh">用自然语言提问即可，例如「做过哪些融资？」「英语怎么样？」。每个回答都标注出处，方便核对。</span><span class="en">Ask in plain language — e.g. “What financing deals has Zhixun done?” or “How good is the English?”. Every answer cites its source in the resume.</span></p>
       </div>
       <div class="how">
-        <div class="how-step"><span class="n">1</span><div><b>中文分词</b><span>把问题切成单字 + 二元词组（unigram + bigram），过滤「什么」「怎么」等停用词</span></div></div>
-        <div class="how-step"><span class="n">2</span><div><b>BM25 检索</b><span>对 <span id="kbN">24</span> 个简历知识片段逐一打分，找出最相关的内容</span></div></div>
-        <div class="how-step"><span class="n">3</span><div><b>带出处作答</b><span>返回命中片段并标注来源，同时推荐相关追问</span></div></div>
+        <div class="how-step"><span class="n">1</span><div><b><span class="zh">中文分词</span><span class="en">Tokenize</span></b><span><span class="zh">把问题切成单字 + 二元词组（unigram + bigram），过滤「什么」「怎么」等停用词</span><span class="en">Splits the question into words (Chinese into unigrams + bigrams) and drops stop words like “what” and “how”</span></span></div></div>
+        <div class="how-step"><span class="n">2</span><div><b><span class="zh">BM25 检索</span><span class="en">BM25 retrieval</span></b><span><span class="zh">对 <span class="kbN">26</span> 个简历知识片段逐一打分，找出最相关的内容</span><span class="en">Scores all <span class="kbN">26</span> resume snippets and picks the most relevant one</span></span></div></div>
+        <div class="how-step"><span class="n">3</span><div><b><span class="zh">带出处作答</span><span class="en">Answer with a citation</span></b><span><span class="zh">返回命中片段并标注来源，同时推荐相关追问</span><span class="en">Returns the matching snippet with its source and suggests follow-up questions</span></span></div></div>
       </div>
-      <p class="privacy"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>全程在你的浏览器本地运行，不调用任何外部接口，提问内容不会离开本页面。</p>
+      <p class="privacy"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span><span class="zh">全程在你的浏览器本地运行，不调用任何外部接口，提问内容不会离开本页面。</span><span class="en">Runs entirely in your browser — no external APIs, and your questions never leave this page.</span></span></p>
     </div>
 
     <div class="chat reveal d1" id="chat">
-      <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><span>resume-assistant</span><span class="status">本地运行</span></div>
-      <div class="chat-log" id="log" aria-live="polite">
-        <div class="msg bot"><div class="av">AI</div><div class="bub"><div class="ln">你好！我是王之寻的简历助手。关于工作经历、代表项目、证书能力或联系方式，都可以问我。点下面的问题试试，或者直接输入。</div></div></div>
-      </div>
+      <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><span>resume-assistant</span><span class="status"><span class="zh">本地运行</span><span class="en">Local</span></span></div>
+      <div class="chat-log" id="log" aria-live="polite"></div>
       <div class="chips" id="chips"></div>
       <form class="chat-form" id="form" autocomplete="off">
-        <input id="q" type="text" placeholder="输入你的问题…" maxlength="80" aria-label="输入问题">
-        <button type="submit" id="send" aria-label="发送"><svg class="i" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+        <input id="q" type="text" placeholder="输入你的问题…" maxlength="100" aria-label="Question">
+        <button type="submit" id="send" aria-label="Send"><svg class="i" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
       </form>
     </div>
   </div>
@@ -784,27 +824,27 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">05 · Education</div>
-      <h2>教育背景</h2>
-      <p>数学 × 经济学的复合训练，硕士必修课程及毕业论文全英文完成。</p>
+      <h2><span class="zh">教育背景</span><span class="en">Education</span></h2>
+      <p><span class="zh">数学 × 经济学的复合训练，硕士必修课程及毕业论文全英文完成。</span><span class="en">Mathematics × economics training; Master’s coursework and thesis completed entirely in English.</span></p>
     </div>
     <div class="edu">
       <div class="panel spot edu-card reveal">
-        <span class="badge-r">QS 世界第 54 名</span>
-        <div class="date">2018.09 — 2022.07</div>
-        <h3>台湾大学</h3>
-        <div class="deg">经济学 · 硕士</div>
+        <span class="badge-r"><span class="zh">QS 世界第 54 名</span><span class="en">QS #54</span></span>
+        <div class="date"><span class="zh">2018.09 — 2022.07</span><span class="en">Sep 2018 — Jul 2022</span></div>
+        <h3><span class="zh">台湾大学</span><span class="en">National Taiwan University</span></h3>
+        <div class="deg"><span class="zh">经济学 · 硕士</span><span class="en">Master’s in Economics</span></div>
       </div>
       <div class="panel spot edu-card reveal d1">
-        <span class="badge-r">985</span>
-        <div class="date">2014.09 — 2018.06</div>
-        <h3>湖南大学</h3>
-        <div class="deg">数学与应用数学 · 学士</div>
+        <span class="badge-r"><span class="zh">985</span><span class="en">Project 985</span></span>
+        <div class="date"><span class="zh">2014.09 — 2018.06</span><span class="en">Sep 2014 — Jun 2018</span></div>
+        <h3><span class="zh">湖南大学</span><span class="en">Hunan University</span></h3>
+        <div class="deg"><span class="zh">数学与应用数学 · 学士</span><span class="en">B.S. in Mathematics &amp; Applied Mathematics</span></div>
       </div>
       <div class="panel spot edu-card reveal d2">
-        <span class="badge-r">免学费</span>
-        <div class="date">2019.06 — 2019.07</div>
-        <h3>新加坡国立大学</h3>
-        <div class="deg">FASStrack Asia · 暑期交换</div>
+        <span class="badge-r"><span class="zh">免学费</span><span class="en">Tuition waived</span></span>
+        <div class="date"><span class="zh">2019.06 — 2019.07</span><span class="en">Jun 2019 — Jul 2019</span></div>
+        <h3><span class="zh">新加坡国立大学</span><span class="en">National University of Singapore</span></h3>
+        <div class="deg"><span class="zh">FASStrack Asia · 暑期交换</span><span class="en">FASStrack Asia Summer Program</span></div>
       </div>
     </div>
   </div>
@@ -815,33 +855,34 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">06 · Credentials &amp; Skills</div>
-      <h2>资质与技能</h2>
+      <h2><span class="zh">资质与技能</span><span class="en">Credentials &amp; Skills</span></h2>
     </div>
     <div class="skills">
       <div class="panel spot sk reveal">
-        <h3><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>专业资质</h3>
+        <h3><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span class="zh">专业资质</span><span class="en">Certifications</span></h3>
         <div class="badges">
+          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">CFA 一级通过</span><span class="en">CFA Level I (passed)</span></span>
+          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">CFA 可持续投资证书</span><span class="en">CFA Sustainable Investing Certificate</span></span>
           <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>PMP</span>
-          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>中级经济师</span>
-          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>CFA 一级通过</span>
-          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>CFA 可持续投资证书</span>
-          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>科技咨询师二级技师</span>
-          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>深港澳金融科技师二级</span>
+          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">中级经济师</span><span class="en">Intermediate Economist (PRC)</span></span>
+          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">深港澳金融科技师二级</span><span class="en">SZ–HK–Macau FinTech Professional (L2)</span></span>
+          <span class="badge"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span class="zh">科技咨询师二级技师</span><span class="en">Technology Consultant (L2)</span></span>
         </div>
       </div>
       <div class="panel spot sk reveal d1">
-        <h3><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>语言能力</h3>
+        <h3><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="zh">语言能力</span><span class="en">Languages</span></h3>
         <ul>
-          <li><b>雅思 6.5</b> · WSK-PETS5 · CET-6</li>
-          <li><b>英语可用作工作语言</b><span>硕士必修课程及毕业论文全英文完成</span></li>
+          <li class="en"><b>Mandarin</b> (native)</li>
+          <li><span class="zh"><b>雅思 6.5</b> · WSK-PETS5 · CET-6</span><span class="en"><b>English</b> — IELTS 6.5 · CET-6 · PETS-5</span></li>
+          <li><span class="zh"><b>英语可用作工作语言</b><span class="s">硕士必修课程及毕业论文全英文完成</span></span><span class="en"><b>English as a working language</b><span class="s">Master’s coursework and thesis completed in English</span></span></li>
         </ul>
       </div>
       <div class="panel spot sk reveal d2">
-        <h3><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>工具技能</h3>
+        <h3><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg><span class="zh">工具技能</span><span class="en">Tools</span></h3>
         <ul>
-          <li><b>Wind · Bloomberg · Choice</b><span>熟练使用金融数据库</span></li>
-          <li><b>Python 数据分析</b><span>批量处理数百家公司数据</span></li>
-          <li><b>AI 智能体</b><span>搭建办公自动化流程</span></li>
+          <li><b>Wind · Bloomberg · Choice</b><span class="s"><span class="zh">熟练使用金融数据库</span><span class="en">Financial data terminals</span></span></li>
+          <li><b><span class="zh">Python 数据分析</span><span class="en">Python data analysis</span></b><span class="s"><span class="zh">批量处理数百家公司数据</span><span class="en">Batch-processing data on hundreds of companies</span></span></li>
+          <li><b><span class="zh">AI 智能体</span><span class="en">AI agents</span></b><span class="s"><span class="zh">搭建办公自动化流程</span><span class="en">Office-automation workflows (e.g., Claude Code)</span></span></li>
         </ul>
       </div>
     </div>
@@ -849,20 +890,20 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
     <div class="life">
       <div class="panel spot lf reveal">
         <div class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg></div>
-        <h3>一日骑行 台北 → 高雄</h3>
-        <div class="ride-stats"><div><b class="grad">370</b><span>km</span></div><div><b class="grad">22</b><span>小时</span></div></div>
+        <h3><span class="zh">一日骑行 台北 → 高雄</span><span class="en">Taipei → Kaohsiung by bike in one day</span></h3>
+        <div class="ride-stats"><div><b class="grad">370</b><span>km</span></div><div><b class="grad">22</b><span><span class="zh">小时</span><span class="en">hours</span></span></div></div>
         <div class="route"><div class="line"></div><div class="prog"></div><div class="dot"></div></div>
-        <div class="route-lbl"><span>台北</span><span>高雄</span></div>
+        <div class="route-lbl"><span><span class="zh">台北</span><span class="en">Taipei</span></span><span><span class="zh">高雄</span><span class="en">Kaohsiung</span></span></div>
       </div>
       <div class="panel spot lf reveal d1">
         <div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <h3>网易云音乐签约音乐人</h3>
-        <p>工作之外的创作者身份。</p>
+        <h3><span class="zh">网易云音乐签约音乐人</span><span class="en">Signed composer on NetEase Cloud Music</span></h3>
+        <p><span class="zh">工作之外的创作者身份。</span><span class="en">A creative side outside of work.</span></p>
       </div>
       <div class="panel spot lf reveal d2">
         <div class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
-        <h3>数十场大型活动志愿者</h3>
-        <p>参与数十场大型活动的志愿服务。</p>
+        <h3><span class="zh">数十场大型活动志愿者</span><span class="en">Event volunteer</span></h3>
+        <p><span class="zh">参与数十场大型活动的志愿服务。</span><span class="en">Volunteered at dozens of large-scale events.</span></p>
       </div>
     </div>
   </div>
@@ -873,23 +914,23 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   <div class="container">
     <div class="contact reveal">
       <div class="kicker">07 · Contact</div>
-      <h2>期待与您交流</h2>
-      <p class="sub">欢迎随时通过电话或邮件联系。</p>
+      <h2><span class="zh">期待与您交流</span><span class="en">Let’s talk</span></h2>
+      <p class="sub"><span class="zh">欢迎随时通过电话或邮件联系。</span><span class="en">Feel free to reach out by phone or email.</span></p>
       <div class="contact-grid">
         <div class="cbox">
-          <a class="ic" data-tel href="#contact" aria-label="拨打电话"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
-          <a class="txt" data-tel href="#contact"><div class="t">电话</div><div class="v" data-phone>请启用 JavaScript 查看</div></a>
-          <button class="copy" data-copy="phone" aria-label="复制电话"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <a class="ic" data-tel href="#contact" aria-label="Call"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+          <a class="txt" data-tel href="#contact"><div class="t"><span class="zh">电话</span><span class="en">Phone</span></div><div class="v" data-phone>JavaScript required</div></a>
+          <button class="copy" data-copy="phone" aria-label="Copy phone"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
         </div>
         <div class="cbox">
-          <a class="ic" data-mail href="#contact" aria-label="发送邮件"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
-          <a class="txt" data-mail href="#contact"><div class="t">邮箱</div><div class="v" data-email>请启用 JavaScript 查看</div></a>
-          <button class="copy" data-copy="email" aria-label="复制邮箱"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <a class="ic" data-mail href="#contact" aria-label="Email"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+          <a class="txt" data-mail href="#contact"><div class="t"><span class="zh">邮箱</span><span class="en">Email</span></div><div class="v" data-email>JavaScript required</div></a>
+          <button class="copy" data-copy="email" aria-label="Copy email"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
         </div>
       </div>
-      <p class="meta">现居 广东深圳 ｜ 籍贯 江苏扬州</p>
+      <p class="meta"><span class="zh">现居 广东深圳 ｜ 籍贯 江苏扬州</span><span class="en">Based in Shenzhen, China · Hometown: Yangzhou, Jiangsu</span></p>
       <div class="cta">
-        <a class="btn primary" href="resume.pdf" download="王之寻简历.pdf"><svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>下载 PDF 简历</a>
+        <a class="btn primary" data-pdf href="resume.pdf" download="王之寻简历.pdf"><svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span class="zh">下载 PDF 简历</span><span class="en">Download resume (PDF)</span></a>
       </div>
     </div>
   </div>
@@ -898,8 +939,8 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
 
 <footer>
   <div class="ai"><i></i>BUILT WITH AI AGENT</div>
-  <div>本站由王之寻借助 AI 编程智能体，从一份 Word 简历生成并部署于 GitHub Pages</div>
-  <div>© 2026 王之寻 · 更新于 2026 年 9 月</div>
+  <div><span class="zh">本站由王之寻借助 AI 编程智能体，从一份 Word 简历生成并部署于 GitHub Pages</span><span class="en">Built by Zhixun Wang with an AI coding agent — generated from a Word resume and deployed on GitHub Pages</span></div>
+  <div><span class="zh">© 2026 王之寻 · 更新于 2026 年 9 月</span><span class="en">© 2026 Zhixun Wang · Updated September 2026</span></div>
 </footer>
 <div class="toast" id="toast" role="status"></div>
 
@@ -967,6 +1008,41 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   </ul>
 </div>
 
+<!-- English one-page resume, rendered from Zhixun_Wang_Resume_EN.docx -->
+<div class="print-cv-en" aria-hidden="true">
+<div style="font-family:'Times New Roman',Times,serif;color:#1A1A1A;font-size:10pt"><div style="margin:0;text-align:center;margin-top:0pt;margin-bottom:2pt;line-height:21pt"><span style="font-weight:700;color:#1F3864;font-size:18pt;letter-spacing:1.5pt">ZHIXUN (RED) WANG</span></div>
+<div style="margin:0;text-align:center;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt">Shenzhen, China<span style="color:#666666"> &nbsp; | &nbsp; </span><span data-phone-intl></span><span style="color:#666666"> &nbsp; | &nbsp; </span><span data-email></span><span style="color:#666666"> &nbsp; | &nbsp; </span>reds-ai.github.io</div>
+<div style="margin:0;margin-top:7.5pt;margin-bottom:2.5pt;line-height:13.5pt;border-bottom:1pt solid #1F3864;padding-bottom:1pt"><span style="font-weight:700;color:#1F3864;font-size:10.5pt;letter-spacing:0.8pt">SUMMARY</span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt">Investment and financing professional with 4 years at CIMC Group across lease finance, industrial funds, asset turnaround, equity governance and fund compliance. Delivered China’s first FTZ-SPV export-tax-rebate container lease (RMB 1.8bn facilities; RMB 60m+ annual profit uplift). Strong researcher and writer, resilient under pressure, adept at aligning stakeholders.</div>
+<div style="margin:0;margin-top:7.5pt;margin-bottom:2.5pt;line-height:13.5pt;border-bottom:1pt solid #1F3864;padding-bottom:1pt"><span style="font-weight:700;color:#1F3864;font-size:10.5pt;letter-spacing:0.8pt">PROFESSIONAL EXPERIENCE</span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">CIMC Group</span><span style="color:#666666"> — world’s largest container manufacturer (SZSE: 000039; HKEX: 2039)</span></span><span style="white-space:nowrap"><span style="font-style:italic">Shenzhen, China</span></span></div>
+<div style="margin:0;margin-top:2pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">Capital Management Supervisor</span>, Capital Management Dept., CIMC Container (Group) Co., Ltd.</span><span style="white-space:nowrap"><span style="font-style:italic">Jan 2024 – Present</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Asset turnaround: </span>Designed a fund-plus-operator rescue of 33 loss-making EV charging stations and pivoted new capital to heavy-truck charging; wrote IC, Chairman and investor papers, winning internal and external approval. <span style="font-weight:700">RMB 15m</span> phase-1 capital paid in; <span style="font-weight:700">~RMB 300m</span> unsecured direct-lease line pending approval; <span style="font-weight:700">8-year payback</span> projected (none before).</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Fundraising: </span>Prepared LP materials and sourced investors for EV-charging and modular data-center funds, engaging China Railway 16th Bureau Group and state-owned platforms in Yangzhou, Ningbo, Kunming and Chongqing; bundled green-power demand from group plants across several cities to pursue solar/wind resource swaps for partner capital.</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Industry–finance synergy: </span>Drafted the group’s capital operations policy; structured asset-based financing with lenders for subsidiaries in modular data centers and buildings, environmental and cold-chain equipment; leveraged group relationships amid a price war to close a CIMC Energy Storage–Huaneng Jingshun deal generating <span style="font-weight:700">RMB 24m</span> in sales.</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Equity governance: </span>Built a unified platform for minority holdings, transferring <span style="font-weight:700">10</span> companies into it, exiting <span style="font-weight:700">2</span> at no loss and deregistering <span style="font-weight:700">1</span>; identified a gap in an investee’s articles of association and negotiated amendments and decision-process fixes with the majority shareholder to protect the company’s minority-shareholder rights.</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Private fund compliance: </span>Independently ran AMAC filings, disclosures and licensing for private fund manager CIMC Pengfeng and its funds, with <span style="font-weight:700">4 consecutive years</span> of compliant operation; completed a legal-representative change within one month ahead of new AMAC shareholding rules; secured a fund extension after <span style="font-weight:700">three AMAC rejections</span>.</div>
+<div style="margin:0;margin-top:4.5pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">Investment Analyst</span>, Investment Dept., CIMC Transportation Technology Co., Ltd.</span><span style="white-space:nowrap"><span style="font-style:italic">Jul 2022 – Dec 2023</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Cross-border lease financing: </span>Owned financing from day one for a global lease program of returnable rubber-transport packaging. Won <span style="font-weight:700">RMB 1.8bn</span> of leasing lines in 6 months (RMB 0.8bn offshore); drew <span style="font-weight:700">~RMB 330m</span> (RMB 140m offshore) over 176,000 sets; cut the rate from <span style="font-weight:700">5.3% to 4.4%</span> and extended tenor from <span style="font-weight:700">8 to 12 years</span>, saving <span style="font-weight:700">~RMB 44m</span> in rent.</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Structuring innovation: </span>Aligned bonded-zone authorities, lessors, suppliers, auditors and finance on <span style="font-weight:700">China’s first</span> cross-border container-type operating lease to obtain export tax rebates via an FTZ SPV, achieving a <span style="font-weight:700">13%</span> VAT exemption and <span style="font-weight:700">RMB 60m+</span> yearly profit uplift. Team Breakthrough Award twice; the deal won the lessor’s Innovation Grand Prize.</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Equity financing: </span>Drove an <span style="font-weight:700">RMB 40m</span> strategic round at a <span style="font-weight:700">US$1bn</span> unicorn valuation, preparing diligence/roadshow materials and reviewing agreements; negotiated a Shenzhen district package (RMB 35m subsidy, 70% land discount, RMB 10m guidance-fund investment); approved by the district and investors’ ICs with no valuation-adjustment terms.</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Industrial investment: </span>Authored an <span style="font-weight:700">RMB 2.5bn</span> investment plan pitched to an East China city’s investment bureau, anchored on EV battery parts and auto lightweight materials, using fixed-asset investment to draw government guidance funds and a special-purpose fund to hold assets and pursue M&amp;A; approved internally by the local government.</div>
+<div style="margin:0;margin-top:7.5pt;margin-bottom:2.5pt;line-height:13.5pt;border-bottom:1pt solid #1F3864;padding-bottom:1pt"><span style="font-weight:700;color:#1F3864;font-size:10.5pt;letter-spacing:0.8pt">EDUCATION</span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">National Taiwan University</span><span style="color:#666666"> (QS #54)</span> — Master’s in Economics; coursework and thesis in English</span><span style="white-space:nowrap"><span style="font-style:italic">Sep 2018 – Jul 2022</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">Hunan University</span><span style="color:#666666"> (Project 985)</span> — B.S. in Mathematics and Applied Mathematics</span><span style="white-space:nowrap"><span style="font-style:italic">Sep 2014 – Jun 2018</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">National University of Singapore</span> — FASStrack Asia Summer Program (tuition waived)</span><span style="white-space:nowrap"><span style="font-style:italic">Jun 2019 – Jul 2019</span></span></div>
+<div style="margin:0;margin-top:7.5pt;margin-bottom:2.5pt;line-height:13.5pt;border-bottom:1pt solid #1F3864;padding-bottom:1pt"><span style="font-weight:700;color:#1F3864;font-size:10.5pt;letter-spacing:0.8pt">RESEARCH INTERNSHIPS</span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">Tebon Securities</span>, Electronics Team — Research Assistant</span><span style="white-space:nowrap"><span style="font-style:italic">Jan 2022 – Apr 2022</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">Shenwan Hongyuan Securities</span>, Specialized &amp; Innovative SMEs Team — Research Assistant</span><span style="white-space:nowrap"><span style="font-style:italic">Sep 2021 – Jan 2022</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;display:flex;justify-content:space-between;align-items:baseline;gap:12pt"><span><span style="font-weight:700">Southwest Securities</span>, Metals &amp; New Materials Team — Research Assistant</span><span style="white-space:nowrap"><span style="font-style:italic">May 2020 – Sep 2020</span></span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Research &amp; valuation: </span>Wrote <span style="font-weight:700">6</span> in-depth reports (1 industry, 5 company) on semiconductors and metals; sized 6 auto-chip segments, analyzed analog ICs, modeled copper supply-demand and valued stocks; processed NEEQ data in Python.</div>
+<div style="margin:0;margin-top:7.5pt;margin-bottom:2.5pt;line-height:13.5pt;border-bottom:1pt solid #1F3864;padding-bottom:1pt"><span style="font-weight:700;color:#1F3864;font-size:10.5pt;letter-spacing:0.8pt">SKILLS &amp; CERTIFICATIONS</span></div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Certifications: </span>CFA Level I (passed); CFA Institute Sustainable Investing Certificate; PMP; Intermediate Economist (PRC); Shenzhen–Hong Kong–Macau FinTech Professional (Level 2); Technology Consultant (Level 2)</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Languages: </span>Mandarin (native); English (working language) — IELTS 6.5, CET-6, PETS-5</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Tools: </span>Wind, Bloomberg, Python (data analysis); AI-agent workflows (e.g., Claude Code) for office automation</div>
+<div style="margin:0;margin-top:0pt;margin-bottom:0pt;line-height:12.6pt;position:relative;padding-left:11pt"><span style="position:absolute;left:0pt;color:#1F3864;font-size:9pt">•</span><span style="font-weight:700;color:#1F3864">Interests: </span>Cycled Taipei–Kaohsiung (370 km) in 22 h; composer signed with NetEase Cloud Music; event volunteer</div></div>
+</div>
+
 <script>
 (function(){
 'use strict';
@@ -974,14 +1050,28 @@ var $=function(s,r){return (r||document).querySelector(s)};
 var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 var fine=window.matchMedia&&matchMedia('(hover: hover) and (pointer: fine)').matches;
+var root=document.documentElement;
+var LANG=window.__LANG==='en'?'en':'zh';
 
 /* ---------- contact (assembled at runtime to keep it away from simple scrapers) ---------- */
 var PH=['189','5273','9739'], EM=['zhixxun_wang','163','com'];
-var PHONE=PH.join(''), PHONE_FMT=PH.join(' '), EMAIL=EM[0]+'@'+EM[1]+'.'+EM[2];
-$$('[data-phone]').forEach(function(el){el.textContent=PHONE_FMT});
-$$('[data-email]').forEach(function(el){el.textContent=EMAIL});
-$$('a[data-tel]').forEach(function(a){a.href='tel:'+PHONE});
-$$('a[data-mail]').forEach(function(a){a.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('关于工作机会 - 王之寻')});
+var PHONE=PH.join(''), EMAIL=EM[0]+'@'+EM[1]+'.'+EM[2];
+var PHONE_FMT={zh:PH.join(' '),en:'+86 '+PH.join(' ')};
+
+var STR={
+  zh:{title:'王之寻 · 产业投融资 / 资本管理 | 个人简历',mail:'关于工作机会 - 王之寻',pdf:'resume.pdf',pdfName:'王之寻简历.pdf',
+      copiedPhone:'电话已复制',copiedEmail:'邮箱已复制',copyFail:'复制失败，请手动选择',ph:'输入你的问题…',
+      greet:'你好！我是王之寻的简历助手。关于工作经历、代表项目、证书能力或联系方式，都可以问我。点下面的问题试试，或者直接输入。',
+      words:['融资租赁','产业基金募投','存量资产盘活','股权融资与治理','私募基金合规','产融协同'],typeMs:110,delMs:55,
+      tTok:'› 分词 [',tRet:function(n,m){return '› BM25 检索 '+n+' 个片段 · 命中 '+m+' 条'},tTop:function(q){return '✓ top-1「'+q+'」 score='},tLow:'× 相关度低于阈值 ',src:'出处：',
+      fallback:function(e){return '这个问题在简历里没有找到足够相关的内容。可以换个问法（比如带上「融资」「基金」「证书」等关键词），或者点下面的推荐问题；也欢迎直接联系王之寻本人：**'+e+'**'}},
+  en:{title:'Zhixun (Red) Wang · Investment & Financing | Resume',mail:'Job opportunity - Zhixun Wang',pdf:'resume-en.pdf',pdfName:'Zhixun_Wang_Resume_EN.pdf',
+      copiedPhone:'Phone number copied',copiedEmail:'Email copied',copyFail:'Copy failed — please select it manually',ph:'Ask a question…',
+      greet:'Hi! I’m Zhixun’s resume assistant. Ask me about experience, key deals, credentials or contact details — try a suggested question below or type your own.',
+      words:['Lease Finance','Industrial Funds','Asset Turnaround','Equity Financing & Governance','Private Fund Compliance','Industry–Finance Synergy'],typeMs:60,delMs:28,
+      tTok:'› tokens [',tRet:function(n,m){return '› BM25 over '+n+' snippets · '+m+' hits'},tTop:function(q){return '✓ top-1 “'+q+'” score='},tLow:'× below threshold ',src:'Source: ',
+      fallback:function(e){return 'I couldn’t find a close enough match in the resume. Try rephrasing (e.g. with “financing”, “fund” or “certification”), pick a suggested question below, or contact Zhixun directly: **'+e+'**'}}
+};
 
 var toastEl=$('#toast'),toastT;
 function toast(msg){toastEl.textContent=msg;toastEl.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show')},1800)}
@@ -991,33 +1081,38 @@ function copyText(t){
 }
 $$('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
   var isPhone=b.getAttribute('data-copy')==='phone';
-  copyText(isPhone?PHONE:EMAIL).then(function(){toast(isPhone?'电话已复制':'邮箱已复制')},function(){toast('复制失败，请手动选择')});
+  copyText(isPhone?PHONE_FMT[LANG]:EMAIL).then(function(){toast(isPhone?STR[LANG].copiedPhone:STR[LANG].copiedEmail)},function(){toast(STR[LANG].copyFail)});
 })});
+$$('[data-email]').forEach(function(el){el.textContent=EMAIL});
+$$('[data-phone-intl]').forEach(function(el){el.textContent=PHONE_FMT.en});
+$$('a[data-tel]').forEach(function(a){a.href='tel:+86'+PHONE});
 
 /* ---------- scroll progress + nav ---------- */
-var bar=$('#progress'),nav=$('#nav'),docEl=document.documentElement,ticking=false;
+var bar=$('#progress'),nav=$('#nav'),ticking=false;
 function onScroll(){
-  var max=docEl.scrollHeight-docEl.clientHeight,y=window.pageYOffset||docEl.scrollTop;
+  var max=root.scrollHeight-root.clientHeight,y=window.pageYOffset||root.scrollTop;
   bar.style.transform='scaleX('+(max>0?y/max:0)+')';
   nav.classList.toggle('scrolled',y>10);ticking=false;
 }
 window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
 onScroll();
-
 if('IntersectionObserver' in window){
   var links=$$('.nav-links a');
   var secIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
   $$('main section[id]').forEach(function(s){secIO.observe(s)});
 }
 
-/* ---------- reveal + count-up ---------- */
+/* ---------- count-up (per-language targets) ---------- */
+function countCfg(el){
+  var en=LANG==='en'&&el.hasAttribute('data-count-en');
+  return {to:parseFloat(el.getAttribute(en?'data-count-en':'data-count')),dec:+(el.getAttribute(en?'data-dec-en':'data-dec')||0)};
+}
+function setCountsFinal(){$$('[data-count]').forEach(function(el){var c=countCfg(el);el.textContent=c.to.toFixed(c.dec)})}
 function countUp(el){
-  var to=parseFloat(el.getAttribute('data-count')),dec=+(el.getAttribute('data-dec')||0);
-  if(reduce){return}
-  var t0=null,dur=1600;
-  function fmt(v){return v.toFixed(dec)}
-  el.textContent=fmt(0);
-  function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur);var e=1-Math.pow(2,-10*p);el.textContent=fmt(p>=1?to:to*e);if(p<1)requestAnimationFrame(f)}
+  if(reduce)return;
+  var c=countCfg(el),t0=null,dur=1600;
+  el.textContent=(0).toFixed(c.dec);
+  function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur),e=1-Math.pow(2,-10*p);el.textContent=(p>=1?c.to:c.to*e).toFixed(c.dec);if(p<1)requestAnimationFrame(f)}
   requestAnimationFrame(f);
 }
 if('IntersectionObserver' in window&&!reduce){
@@ -1033,20 +1128,24 @@ if('IntersectionObserver' in window&&!reduce){
 }
 
 /* ---------- hero word rotator ---------- */
-(function(){
-  var el=$('#rot');if(!el)return;
-  var words=['融资租赁','产业基金募投','存量资产盘活','股权融资与治理','私募基金合规','产融协同'];
-  var wi=0;
-  if(reduce){setInterval(function(){wi=(wi+1)%words.length;el.textContent=words[wi]},2600);return}
-  var ci=words[0].length,del=false;
+var rotator=(function(){
+  var el=$('#rot');if(!el)return {reset:function(){}};
+  var wi=0,ci=0,del=true,timer=0;
+  function words(){return STR[LANG].words}
   function tick(){
-    var w=words[wi];
-    if(!del){ci++;el.textContent=w.slice(0,ci);if(ci>=w.length){del=true;return setTimeout(tick,1900)}return setTimeout(tick,110)}
-    ci--;el.textContent=w.slice(0,ci);
-    if(ci<=0){del=false;wi=(wi+1)%words.length;return setTimeout(tick,260)}
-    setTimeout(tick,55);
+    var w=words()[wi%words().length];
+    if(!del){ci++;el.textContent=w.slice(0,ci);if(ci>=w.length){del=true;timer=setTimeout(tick,1900);return}timer=setTimeout(tick,STR[LANG].typeMs);return}
+    ci--;el.textContent=w.slice(0,Math.max(ci,0));
+    if(ci<=0){del=false;wi=(wi+1)%words().length;timer=setTimeout(tick,260);return}
+    timer=setTimeout(tick,STR[LANG].delMs);
   }
-  del=true;setTimeout(tick,2200);
+  function reset(){
+    clearTimeout(timer);clearInterval(timer);
+    wi=0;ci=words()[0].length;del=true;el.textContent=words()[0];
+    if(reduce){timer=setInterval(function(){wi=(wi+1)%words().length;el.textContent=words()[wi]},2600)}
+    else timer=setTimeout(tick,2200);
+  }
+  return {reset:reset};
 })();
 
 /* ---------- card tilt + spotlight ---------- */
@@ -1136,8 +1235,8 @@ if(fine){
   if('IntersectionObserver' in window){new IntersectionObserver(function(es){on=es[0].isIntersecting;on?start():stop()}).observe(hero)}
 })();
 
-/* ---------- resume Q&A: bigram tokenizer + BM25 retrieval ---------- */
-var KB=[
+/* ---------- resume Q&A: tokenizer + BM25 retrieval, one index per language ---------- */
+var KB={zh:[
  {id:'intro',q:'用 30 秒介绍一下王之寻',k:'介绍 自我介绍 是谁 简介 概况 总结 概述 背景 基本情况 核心 优势 亮点 一句话 30秒 候选人',src:'简历概览',
   a:'王之寻现任**中集集装箱（集团）资本管理部资本管理主管**，拥有 **4 年大型产业集团投融资经验**，贯通融资租赁、产业基金募投、存量资产盘活、股权治理与私募基金合规。\n代表作是落地**国内首例自贸区 SPV 出口退税集装箱经营性租赁**：获批授信 18 亿元，项目公司年增利润超 6000 万元。\n教育背景为**台湾大学经济学硕士**（QS 世界第 54 名）、湖南大学数学与应用数学学士（985）。'},
  {id:'spv',q:'最有代表性的项目是什么？',k:'代表 代表性 项目 案例 成就 成绩 业绩 最大 骄傲 亮点 首例 自贸区 spv 出口退税 退税 税务 财税 税收 集装箱 经营性租赁 跨境 增值税 创新 突破 模式 架构 结构',src:'工作经历 · 中集运载科技 投资部',
@@ -1190,10 +1289,75 @@ var KB=[
   a:'本科为**湖南大学数学与应用数学**，硕士为**台湾大学经济学**。\n· **估值建模**：拆分公司业务，预估产能、原材料价格、售价、毛利率做盈利预测；用绝对估值法估算每股内在价值，用相对估值法估算 PE 与目标价\n· **行业空间测算**：对汽车半导体六大细分行业做量价拆分\n· **数据处理**：用 Choice 函数提取每周数百家新三板公司数据，并用 Python 处理\n· 工作中组织重庆充电站盘活的多轮调研测算'},
  {id:'hello',q:'你好',k:'你好 您好 hello hi hey 在吗 嗨 哈喽 早上好 下午好',src:'',
   a:'你好！我是王之寻的简历助手，可以回答关于工作经历、代表项目、证书能力、联系方式等问题。试试下面的推荐问题吧。'}
-];
+],en:[
+ {id:'intro',q:'Give me a 30-second intro',k:'yourself himself self intro introduce introduction who summary overview background profile about quick brief elevator pitch candidate highlight strength',src:'Resume overview',
+  a:'Zhixun (Red) Wang is a **Capital Management Supervisor at CIMC Container (Group)**, with **4 years of investment and financing experience** at a large industrial group across lease finance, industrial funds, asset turnaround, equity governance and private fund compliance.\nSignature deal: **China’s first FTZ-SPV export-tax-rebate container operating lease** — RMB 1.8bn in facilities and RMB 60m+ annual profit uplift.\nEducation: **Master’s in Economics, National Taiwan University** (QS #54); B.S. in Mathematics, Hunan University (Project 985).'},
+ {id:'spv',q:'What is the signature deal?',k:'signature best biggest proudest key flagship deal project achievement case first ftz spv free trade zone export tax rebate vat container operating lease cross border structure structuring innovation',src:'Experience · CIMC Transportation Tech, Investment Dept.',
+  a:'The signature deal is **China’s first cross-border container-type operating lease to obtain export tax rebates via an FTZ SPV**.\nZhixun aligned bonded-zone authorities, lessors, suppliers, auditors and internal finance on the structure, achieving a **13% VAT exemption** and **RMB 60m+ yearly profit uplift**.\nThe project won the company’s **Team Breakthrough Award two years running** and the lessor’s **Innovation Grand Prize**.'},
+ {id:'lease',q:'What did the lease financing involve?',k:'lease leasing financing finance debt facility facilities line credit lessor rate interest tenor saving cost rent rubber packaging global cross border offshore 1.8bn negotiate',src:'Experience · CIMC Transportation Tech, Investment Dept.',
+  a:'Zhixun owned financing from day one for a **global lease program of returnable rubber packaging**:\n· Won **RMB 1.8bn** of leasing lines in 6 months (RMB 0.8bn offshore)\n· Drew **~RMB 330m** (RMB 140m offshore) over **176,000 sets**\n· Cut the rate from **5.3% to 4.4%** and extended tenor from **8 to 12 years**, saving **~RMB 44m** in rent'},
+ {id:'charging',q:'Any asset turnaround experience?',k:'asset turnaround rescue restructuring distressed loss making charging station ev chongqing payback operator special purpose fund heavy truck direct lease ic chairman',src:'Experience · CIMC Container, Capital Mgmt. Dept.',
+  a:'For **33 loss-making EV charging stations in Chongqing**, Zhixun organized rounds of diligence and modeling with financial institutions and experts, designed a **fund-plus-operator** rescue plan and pivoted new capital to heavy-truck charging.\nWrote the IC, Chairman and investor papers, winning internal and external approval: **RMB 15m** phase-1 capital paid in, a ~RMB 300m unsecured direct-lease line pending approval, and an **8-year payback** projected (none before).'},
+ {id:'fund',q:'What fundraising has Zhixun done?',k:'fundraising fund raise raising lp limited partner investor capital data center modular green power solar wind state owned platform china railway yangzhou ningbo kunming chongqing',src:'Experience · CIMC Container, Capital Mgmt. Dept.',
+  a:'Prepared LP materials and sourced investors for **EV-charging and modular data-center funds**, engaging China Railway 16th Bureau Group and state-owned platforms in Yangzhou, Ningbo, Kunming and Chongqing.\nAlso bundled green-power demand from group plants across several cities to pursue **solar/wind resource swaps for partner capital**.'},
+ {id:'equity',q:'Any equity financing experience?',k:'equity financing strategic round investor unicorn roadshow due diligence agreement subsidy land guidance fund shenzhen district vam valuation adjustment pre ipo',src:'Experience · CIMC Transportation Tech, Investment Dept.',
+  a:'Yes. Drove an **RMB 40m strategic round at a US$1bn unicorn valuation**, preparing diligence and roadshow materials and reviewing agreements.\nAlso negotiated a Shenzhen district package — **RMB 35m subsidy, 70% land discount and RMB 10m guidance-fund investment** — approved by the district and investors’ ICs with **no valuation-adjustment terms**.'},
+ {id:'industry',q:'What industrial investment work?',k:'industrial investment plan 2.5bn government investment bureau battery ev lightweight material expansion fixed asset guidance fund m&a acquisition east china',src:'Experience · CIMC Transportation Tech, Investment Dept.',
+  a:'Authored an **RMB 2.5bn investment plan** pitched to an East China city’s investment bureau, anchored on **EV battery parts and auto lightweight materials**.\nThe plan used fixed-asset investment to draw government guidance funds and a special-purpose fund to hold assets and pursue M&A — approved internally by the local government.'},
+ {id:'synergy',q:'How was industry–finance synergy done?',k:'industry finance synergy group subsidiaries capital operations policy asset based financing data center modular building environmental cold chain energy storage huaneng sales price war',src:'Experience · CIMC Container, Capital Mgmt. Dept.',
+  a:'Drafted the **group’s capital operations policy**; structured asset-based financing with lenders for subsidiaries in modular data centers and buildings, environmental and cold-chain equipment.\nAmid a price war, leveraged group relationships to close a **CIMC Energy Storage–Huaneng Jingshun deal generating RMB 24m in sales**.'},
+ {id:'governance',q:'Results in equity governance?',k:'equity governance corporate minority holdings stake investee platform transfer exit deregister articles association shareholder rights post investment management',src:'Experience · CIMC Container, Capital Mgmt. Dept.',
+  a:'Built a **unified platform for minority holdings**: transferred **10 companies** into it, exited **2 at no loss** and deregistered 1.\nIdentified a gap in an investee’s articles of association and negotiated amendments and decision-process fixes with the majority shareholder to protect minority-shareholder rights.'},
+ {id:'compliance',q:'Private fund compliance experience?',k:'private fund compliance regulatory amac filing disclosure license licensing manager pengfeng extension legal representative rule regulation risk',src:'Experience · CIMC Container, Capital Mgmt. Dept.',
+  a:'Independently ran AMAC filings, disclosures and licensing for private fund manager **CIMC Pengfeng** and its funds — **4 consecutive years** of compliant operation.\n· Completed a legal-representative change **within one month** ahead of new AMAC shareholding rules\n· Secured a fund extension after **three AMAC rejections**'},
+ {id:'research',q:'Any industry research background?',k:'research equity analyst sell side internship intern brokerage report note tebon shenwan hongyuan southwest securities writing coverage',src:'Internships · Brokerage research',
+  a:'Yes. Research assistant at **Tebon Securities (Electronics), Shenwan Hongyuan Securities (Specialized & Innovative SMEs) and Southwest Securities (Metals & New Materials)**, covering semiconductors and metals:\n· **6 in-depth reports** as sole author (1 industry, 5 company)\n· **10** Beijing Stock Exchange company notes and **6** interim-results notes\n· **20+** meeting, site-visit and expert-call notes (Hua Hong, Infineon, Bosch and more)\n· SWS industry classification for **400** NEEQ companies'},
+ {id:'semi',q:'What semiconductor research?',k:'semiconductor chip mcu automotive auto igbt sic dram nand cis wafer silicon nsig analog nanlin tws packaging soc sip cycle fab market size sizing penetration',src:'Internships · Tebon / Shenwan Hongyuan',
+  a:'· **Automotive MCU deep-dive**: global landscape, automotive-grade certification hurdles, why China’s self-sufficiency is low, and entry points for domestic players; recommended three stocks\n· **Sized six auto-chip segments** (MCU, IGBT, SiC, DRAM, NAND, CIS) with volume × price models driven by vehicle sales, EV and smart-driving penetration\n· **Company deep-dives**: NSIG (silicon wafers) and Nanlin Electronics (analog chips)\n· **Cycle analysis**: fab capex growth, utilization, price hikes and chip lead times'},
+ {id:'metal',q:'What metals / copper research?',k:'metal metals copper non ferrous commodity supply demand price processing fee smm icsg usgs boway truchum yunnan gold zijin mining interim southwest',src:'Internships · Southwest Securities',
+  a:'· **Copper analysis**: built a copper framework from SMM, ICSG and USGS data; forecast the supply-demand balance and gave outlooks for copper prices and processing fees\n· **3 company deep-dives**: Boway Alloy, Truchum Advanced Materials, Yunnan Copper\n· **6 interim-results notes**: the non-ferrous sector plus Boway Alloy, Yunnan Copper, Hunan Gold, Yintai Gold, Zijin Mining and others'},
+ {id:'edu',q:'What is the educational background?',k:'education degree university school study master masters bachelor graduate ntu taiwan hunan 985 qs ranking nus singapore exchange economics mathematics',src:'Education',
+  a:'· **National Taiwan University** — Master’s in Economics (Sep 2018 – Jul 2022), QS #54; coursework and thesis in English\n· **Hunan University** — B.S. in Mathematics & Applied Mathematics (Sep 2014 – Jun 2018), Project 985\n· **National University of Singapore** — FASStrack Asia Summer Program (Jun – Jul 2019), tuition waived'},
+ {id:'cert',q:'What certifications?',k:'certification certificate certified qualification license credential cfa pmp economist esg sustainable investing fintech consultant exam',src:'Skills & certifications',
+  a:'**CFA Level I** (passed), **CFA Institute Sustainable Investing Certificate**, **PMP**, **Intermediate Economist (PRC)**, Shenzhen–Hong Kong–Macau FinTech Professional (Level 2), Technology Consultant (Level 2).'},
+ {id:'lang',q:'How good is the English?',k:'english language languages speak fluent ielts cet pets mandarin chinese working international overseas communication',src:'Skills & certifications',
+  a:'Mandarin (native); **English as a working language** — IELTS **6.5**, CET-6, PETS-5. Master’s coursework and thesis were completed **entirely in English**.'},
+ {id:'ai',q:'What about AI & data skills?',k:'ai artificial intelligence agent agents automation claude code llm gpt python data analysis tool tools software wind bloomberg choice tech technical programming website',src:'Skills & certifications',
+  a:'Proficient with **Wind, Bloomberg and Choice**, plus **Python** for data analysis; builds **AI-agent workflows (e.g., Claude Code)** for office automation.\nThis website is one example: Zhixun turned a Word resume into this interactive site with an AI coding agent, and the assistant you are using is a retrieval system running locally in your browser.'},
+ {id:'soft',q:'What about soft skills?',k:'soft skill communication communicator communicate interpersonal stakeholder coordination teamwork team leadership pressure resilient resilience writing writer personality strength weakness negotiation',src:'Key strengths',
+  a:'A strong researcher and writer, **resilient under pressure** and adept at **aligning stakeholders** — government, financial institutions and more. For example:\n· Wrote IC, Chairman and investor papers that won internal and external approval\n· Aligned five parties — bonded-zone authorities, lessors, suppliers, auditors and finance — on a first-of-its-kind structure in China\n· Secured a fund extension after three AMAC rejections'},
+ {id:'hobby',q:'What is Zhixun like outside work?',k:'hobby hobbies interest interests outside work personal life sport cycling bike ride music composer netease volunteer taipei kaohsiung fun',src:'Interests',
+  a:'· **Cycled Taipei to Kaohsiung in one day**: 370 km in 22 hours\n· **Signed composer on NetEase Cloud Music**\n· Volunteer at dozens of large-scale events'},
+ {id:'contact',q:'How can I get in touch?',k:'contact reach phone call number mobile email mail interview touch wechat',src:'Contact',
+  a:'· Phone: **{PHONE}**\n· Email: **{EMAIL}**\n· Based in Shenzhen, China\nLooking forward to hearing from you!'},
+ {id:'awards',q:'Any awards or recognition?',k:'award awards prize recognition honor honour achievement breakthrough grand prize',src:'Experience · CIMC Transportation Tech, Investment Dept.',
+  a:'The cross-border lease deal won the company’s **Team Breakthrough Award two years in a row** and the lessor’s internal **Innovation Grand Prize**.'},
+ {id:'career',q:'What is the work history?',k:'work history experience career job jobs employer company position title role current years timeline cimc supervisor analyst',src:'Experience',
+  a:'· **Jan 2024 – Present** · CIMC Container (Group) Co., Ltd. · Capital Management Dept. · **Capital Management Supervisor** (internal transfer)\n· **Jul 2022 – Dec 2023** · CIMC Transportation Technology Co., Ltd. · Investment Dept. · **Investment Analyst**\nBefore that: research internships at Tebon, Shenwan Hongyuan and Southwest Securities.'},
+ {id:'fit',q:'What roles is Zhixun suited for?',k:'fit suited suitable role roles position target looking open opportunity strength specialty expertise why hire',src:'Key strengths',
+  a:'Zhixun’s experience centers on **investment, financing and capital operations at an industrial group**: lease and cross-border financing, industrial fund raising and investment, asset turnaround, equity financing and investee governance, and private fund compliance — plus a sell-side research background.\nFor specific role interests, please contact Zhixun directly.'},
+ {id:'location',q:'Where is Zhixun based?',k:'location based city live living where shenzhen china hometown yangzhou jiangsu relocate',src:'Basic info',
+  a:'Based in **Shenzhen, China**; hometown **Yangzhou, Jiangsu**.'},
+ {id:'quant',q:'Can Zhixun build financial models?',k:'quant quantitative model modeling modelling financial valuation dcf absolute relative pe target price earnings forecast math mathematics python choice sizing',src:'Education · Internships',
+  a:'B.S. in **Mathematics & Applied Mathematics** (Hunan University) and Master’s in **Economics** (National Taiwan University).\n· **Valuation modeling**: earnings forecasts from capacity, costs, prices and margins; absolute valuation for intrinsic value per share, relative valuation for P/E and target prices\n· **Market sizing**: volume × price models for six auto-semiconductor segments\n· **Data**: weekly NEEQ data pulled with Choice and processed in Python\n· Organized diligence and modeling for the Chongqing charging-station turnaround'},
+ {id:'hello',q:'Hi',k:'hi hello hey good morning afternoon',src:'',
+  a:'Hi! I’m Zhixun’s resume assistant. Ask about experience, key deals, credentials or contact details — or try a suggested question below.'}
+]};
 var CHIPS=['intro','spv','lease','charging','research','ai','cert','hobby','contact'];
-var STOP={'什么':1,'哪些':1,'怎么':1,'怎样':1,'如何':1,'有没':1,'没有':1,'是否':1,'可以':1,'一下':1,'请问':1,'这个':1,'那个':1,'问题':1,'他的':1,'她的':1,'你的':1,'有什':1,'么样':1,'样的':1,'是什':1,'王之':1,'之寻':1,'的':1,'了':1,'吗':1,'呢':1,'是':1,'有':1,'在':1,'和':1,'他':1,'她':1,'你':1,'我':1,'么':1,'什':1,'哪':1,'怎':1,'过':1,'做':1,'会':1,'能':1,'吧':1,'啊':1,'呀':1,'请':1,'问':1,'一':1,'下':1,'这':1,'那':1,'个':1,'些':1,'多':1,'少':1,'都':1,'也':1,'就':1,'还':1,'很':1,'对':1,'与':1,'及':1,'等':1,'其':1,'于':1,'为':1,'被':1,'把':1,'让':1,'给':1,'要':1,'想':1,'可':1,'以':1,'得':1,'着':1,'所':1,'从':1,'到':1,'如':1,'何':1,'样':1,'啥':1,'嘛':1,'王':1,'之':1,'寻':1,'方':1,'面':1,'经':1,'验':1,'具':1,'体':1};
-function tok(s){
+var STOP_ZH={'什么':1,'哪些':1,'怎么':1,'怎样':1,'如何':1,'有没':1,'没有':1,'是否':1,'可以':1,'一下':1,'请问':1,'这个':1,'那个':1,'问题':1,'他的':1,'她的':1,'你的':1,'有什':1,'么样':1,'样的':1,'是什':1,'王之':1,'之寻':1,'的':1,'了':1,'吗':1,'呢':1,'是':1,'有':1,'在':1,'和':1,'他':1,'她':1,'你':1,'我':1,'么':1,'什':1,'哪':1,'怎':1,'过':1,'做':1,'会':1,'能':1,'吧':1,'啊':1,'呀':1,'请':1,'问':1,'一':1,'下':1,'这':1,'那':1,'个':1,'些':1,'多':1,'少':1,'都':1,'也':1,'就':1,'还':1,'很':1,'对':1,'与':1,'及':1,'等':1,'其':1,'于':1,'为':1,'被':1,'把':1,'让':1,'给':1,'要':1,'想':1,'可':1,'以':1,'得':1,'着':1,'所':1,'从':1,'到':1,'如':1,'何':1,'样':1,'啥':1,'嘛':1,'王':1,'之':1,'寻':1,'方':1,'面':1,'经':1,'验':1,'具':1,'体':1};
+function stemEn(w){
+  if(w.length<=3)return w;
+  if(w.length>4&&/ies$/.test(w))w=w.slice(0,-3)+'y';
+  else if(!/(ss|us|is)$/.test(w)&&/s$/.test(w))w=w.slice(0,-1);
+  if(w.length>5&&/ing$/.test(w))w=w.slice(0,-3);
+  else if(w.length>4&&/ed$/.test(w))w=w.slice(0,-2);
+  if(w.length>4&&/e$/.test(w))w=w.slice(0,-1);
+  return w;
+}
+var STOP_EN={};
+('a an the of in on at to for from by with and or but is are was were be been being am do does did done has have had having any some what which who whom whose how why when where can could would should will shall may might must tell me you your yours i my we our us he him his she her they them their it its this that these those there here about as into than then so too very just also please kind sort zhixun wang red candidate')
+  .split(' ').forEach(function(w){STOP_EN[stemEn(w)]=1});
+function tokZh(s){
   var out=[],re=/[a-z0-9][a-z0-9.+#%]*|[一-鿿]+/g,m;
   s=String(s).toLowerCase().replace(/\*\*/g,'');
   while((m=re.exec(s))){
@@ -1203,41 +1367,52 @@ function tok(s){
   }
   return out;
 }
+function tokEn(s){
+  var m=String(s).toLowerCase().replace(/\*\*/g,'').replace(/[’']/g,'').match(/[a-z0-9]+(?:\.[0-9]+)?/g)||[];
+  return m.map(stemEn);
+}
 function rep(a,n){var r=[];for(var i=0;i<n;i++)r=r.concat(a);return r}
-var DOCS=KB.map(function(d){
-  var t=rep(tok(d.q),3).concat(rep(tok(d.k),2),tok(d.a)),tf={};
-  t.forEach(function(x){tf[x]=(tf[x]||0)+1});
-  return {d:d,tf:tf,len:t.length};
-});
-var N=DOCS.length,AVG=DOCS.reduce(function(s,x){return s+x.len},0)/N,DF={};
-DOCS.forEach(function(x){for(var t in x.tf)DF[t]=(DF[t]||0)+1});
-var TH=4;
-function search(q){
-  var seen={},qt=tok(q).filter(function(t){if(STOP[t]||seen[t])return false;seen[t]=1;return true});
+function buildIndex(kb,lang){
+  var T=lang==='en'?tokEn:tokZh,byId={};
+  var docs=kb.map(function(d){
+    byId[d.id]=d;
+    var t=rep(T(d.q),3).concat(rep(T(d.k),2),T(d.a)),tf={};
+    t.forEach(function(x){tf[x]=(tf[x]||0)+1});
+    return {d:d,tf:tf,len:t.length};
+  });
+  var df={};docs.forEach(function(x){for(var t in x.tf)df[t]=(df[t]||0)+1});
+  return {lang:lang,T:T,stop:lang==='en'?STOP_EN:STOP_ZH,th:lang==='en'?3:4,docs:docs,N:docs.length,avg:docs.reduce(function(s,x){return s+x.len},0)/docs.length,df:df,byId:byId};
+}
+var IX={zh:buildIndex(KB.zh,'zh'),en:buildIndex(KB.en,'en')};
+function search(q,ix){
+  var seen={},qt=ix.T(q).filter(function(t){if(ix.stop[t]||seen[t])return false;seen[t]=1;return true});
   var k1=1.2,b=.75;
-  var res=DOCS.map(function(x){
+  var res=ix.docs.map(function(x){
     var s=0;
-    qt.forEach(function(t){var f=x.tf[t];if(!f)return;var n=DF[t],w=/^[a-z0-9]/.test(t)?2:1;s+=w*Math.log(1+(N-n+.5)/(n+.5))*f*(k1+1)/(f+k1*(1-b+b*x.len/AVG))});
+    qt.forEach(function(t){var f=x.tf[t];if(!f)return;var n=ix.df[t],w=ix.lang==='zh'&&/^[a-z0-9]/.test(t)?2:1;s+=w*Math.log(1+(ix.N-n+.5)/(n+.5))*f*(k1+1)/(f+k1*(1-b+b*x.len/ix.avg))});
     return {d:x.d,s:s};
   }).filter(function(r){return r.s>0}).sort(function(a,b){return b.s-a.s});
   return {qt:qt,res:res};
 }
-var kbN=$('#kbN');if(kbN)kbN.textContent=N;
+// answer in the language of the question: Chinese text -> Chinese index; an English sentence on the Chinese page -> English index
+function indexFor(q){
+  if(/[一-鿿]/.test(q))return IX.zh;
+  if(LANG==='zh'&&(q.match(/[a-z]{2,}/gi)||[]).length>=2)return IX.en;
+  return IX[LANG];
+}
 
 var log=$('#log'),form=$('#form'),input=$('#q'),send=$('#send'),chipsEl=$('#chips');
 var busy=false,asked={},skipAnim=false;
-var byId={};KB.forEach(function(d){byId[d.id]=d});
 function sleep(ms){return new Promise(function(r){setTimeout(r,ms)})}
 function scrollLog(){log.scrollTop=log.scrollHeight}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-function mkChip(d,parent){
-  var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=d.q;
+function mkChip(id,parent){
+  var d=IX[LANG].byId[id],b=document.createElement('button');b.type='button';b.className='chip';b.textContent=d.q;
   b.addEventListener('click',function(){ask(d.q,d.id)});parent.appendChild(b);return b;
 }
-function renderChips(){chipsEl.innerHTML='';CHIPS.forEach(function(id){mkChip(byId[id],chipsEl)})}
-renderChips();
+function renderChips(){chipsEl.innerHTML='';CHIPS.forEach(function(id){mkChip(id,chipsEl)})}
 function setBusy(v){busy=v;send.disabled=v;$$('.chip').forEach(function(c){c.disabled=v})}
-function fill(a){return a.replace('{PHONE}',PHONE_FMT).replace('{EMAIL}',EMAIL)}
+function fill(a,lang){return a.replace('{PHONE}',PHONE_FMT[lang]).replace('{EMAIL}',EMAIL)}
 function parse(a){
   return a.split('\n').map(function(line){
     var li=line.indexOf('· ')===0;if(li)line=line.slice(2);
@@ -1275,29 +1450,36 @@ async function traceLine(el,html,cls){
 async function ask(text,forcedId){
   text=String(text||'').trim();if(!text||busy)return;
   setBusy(true);skipAnim=false;input.value='';
+  var S=STR[LANG];
   addUser(text);
-  var r=search(text),hit=null,score=0;
-  if(forcedId){hit=byId[forcedId];r.res.forEach(function(x){if(x.d===hit)score=x.s})}
-  else if(r.res.length&&r.res[0].s>=TH){hit=r.res[0].d;score=r.res[0].s}
+  var ix=forcedId?IX[LANG]:indexFor(text),r=search(text,ix),hit=null,score=0;
+  if(forcedId){hit=ix.byId[forcedId];r.res.forEach(function(x){if(x.d===hit)score=x.s})}
+  else if(r.res.length&&r.res[0].s>=ix.th){hit=r.res[0].d;score=r.res[0].s}
   var bot=addBot();
   if(!reduce)await sleep(320);
   var toks=r.qt.slice(0,6).map(esc).join(' / ')+(r.qt.length>6?' …':'');
-  await traceLine(bot.trace,'› 分词 ['+(toks||'∅')+']');
-  await traceLine(bot.trace,'› BM25 检索 '+N+' 个片段 · 命中 '+r.res.length+' 条');
-  if(hit&&hit.id!=='hello')await traceLine(bot.trace,'✓ top-1「'+esc(hit.q)+'」 score='+score.toFixed(2),'ok');
-  else if(!hit)await traceLine(bot.trace,'× 相关度低于阈值 '+TH.toFixed(1));
+  await traceLine(bot.trace,S.tTok+(toks||'∅')+']');
+  await traceLine(bot.trace,S.tRet(ix.N,r.res.length));
+  if(hit&&hit.id!=='hello')await traceLine(bot.trace,S.tTop(esc(hit.q))+score.toFixed(2),'ok');
+  else if(!hit)await traceLine(bot.trace,S.tLow+ix.th.toFixed(1));
   bot.body.innerHTML='';
-  var ans=hit?fill(hit.a):'这个问题在简历里没有找到足够相关的内容。可以换个问法（比如带上「融资」「基金」「证书」等关键词），或者点下面的推荐问题；也欢迎直接联系王之寻本人：**'+EMAIL+'**';
-  await stream(bot.body,ans);
+  await stream(bot.body,hit?fill(hit.a,ix.lang):S.fallback(EMAIL));
   if(hit){
     asked[hit.id]=1;
-    if(hit.src){var s=document.createElement('div');s.className='src';s.innerHTML='<svg class="i" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg>出处：'+esc(hit.src);bot.bub.appendChild(s)}
+    if(hit.src){var s=document.createElement('div');s.className='src';s.innerHTML='<svg class="i" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg>'+esc(S.src+hit.src);bot.bub.appendChild(s)}
   }
-  var rel=r.res.filter(function(x){return x.d!==hit&&x.s>=TH&&x.d.id!=='hello'&&!asked[x.d.id]}).slice(0,2).map(function(x){return x.d});
-  CHIPS.forEach(function(id){if(rel.length<2&&!asked[id]&&byId[id]!==hit&&rel.indexOf(byId[id])<0)rel.push(byId[id])});
-  if(rel.length){var f=document.createElement('div');f.className='follow';rel.forEach(function(d){mkChip(d,f)});bot.bub.appendChild(f)}
+  var rel=r.res.filter(function(x){return x.d!==hit&&x.s>=ix.th&&x.d.id!=='hello'&&!asked[x.d.id]}).slice(0,2).map(function(x){return x.d.id});
+  CHIPS.forEach(function(id){if(rel.length<2&&!asked[id]&&(!hit||id!==hit.id)&&rel.indexOf(id)<0)rel.push(id)});
+  if(rel.length){var f=document.createElement('div');f.className='follow';rel.forEach(function(id){mkChip(id,f)});bot.bub.appendChild(f)}
   scrollLog();
   setBusy(false);
+}
+function resetChat(){
+  skipAnim=true;asked={};log.innerHTML='';
+  var m=document.createElement('div');m.className='msg bot';
+  m.innerHTML='<div class="av">AI</div><div class="bub"><div class="ln"></div></div>';
+  $('.ln',m).textContent=STR[LANG].greet;log.appendChild(m);
+  renderChips();setBusy(busy);
 }
 form.addEventListener('submit',function(e){e.preventDefault();ask(input.value)});
 log.addEventListener('click',function(e){if(busy&&!e.target.closest('.chip'))skipAnim=true});
@@ -1305,10 +1487,34 @@ log.addEventListener('click',function(e){if(busy&&!e.target.closest('.chip'))ski
 // play one demo answer the first time the assistant scrolls into view
 if('IntersectionObserver' in window){
   var demoIO=new IntersectionObserver(function(es){
-    if(es[0].isIntersecting){demoIO.disconnect();setTimeout(function(){if(!busy&&!Object.keys(asked).length)ask(byId.intro.q,'intro')},700)}
+    if(es[0].isIntersecting){demoIO.disconnect();setTimeout(function(){if(!busy&&!Object.keys(asked).length)ask(IX[LANG].byId.intro.q,'intro')},700)}
   },{threshold:.5});
   demoIO.observe($('#chat'));
 }
+
+/* ---------- language switch ---------- */
+function applyLang(l,user){
+  LANG=l==='en'?'en':'zh';
+  var S=STR[LANG];
+  root.classList.toggle('lang-en',LANG==='en');
+  root.lang=LANG==='en'?'en':'zh-CN';
+  document.title=S.title;
+  $$('.lang-toggle button').forEach(function(b){var on=b.getAttribute('data-lang')===LANG;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+  $$('[data-phone]').forEach(function(el){el.textContent=PHONE_FMT[LANG]});
+  $$('a[data-mail]').forEach(function(a){a.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(S.mail)});
+  $$('a[data-pdf]').forEach(function(a){a.href=S.pdf;a.setAttribute('download',S.pdfName)});
+  $$('.kbN').forEach(function(el){el.textContent=IX[LANG].N});
+  input.placeholder=S.ph;
+  setCountsFinal();
+  rotator.reset();
+  resetChat();
+  if(user){
+    try{localStorage.setItem('lang',LANG)}catch(e){}
+    try{var u=new URL(location.href);u.searchParams.set('lang',LANG);history.replaceState(null,'',u.toString())}catch(e){}
+  }
+}
+$$('.lang-toggle button').forEach(function(b){b.addEventListener('click',function(){var l=b.getAttribute('data-lang');if(l!==LANG)applyLang(l,true)})});
+applyLang(LANG,false);
 })();
 </script>
 </body>
