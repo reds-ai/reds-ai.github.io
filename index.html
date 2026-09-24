@@ -230,10 +230,16 @@ button{font-family:inherit}
 .job li::before{content:"";position:absolute;left:1px;top:.78em;width:6px;height:6px;border-radius:1.5px;background:var(--blue);transform:rotate(45deg)}
 .job li .lt{color:var(--text);font-weight:700;margin-right:4px}
 .job li em{font-style:normal;color:var(--blue);font-weight:700}
-.interns{margin-top:16px;display:grid;gap:8px}
-.intern{display:grid;grid-template-columns:150px 1fr auto;gap:12px;font-size:14.5px;padding:10px 14px;border-radius:8px;background:var(--soft);border:1px solid var(--line);align-items:baseline;color:var(--text)}
-.intern .d{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.intern .r{color:var(--muted);font-size:13px}
+.istats{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.istats div{padding:12px 14px;border-radius:10px;background:var(--soft);border:1px solid var(--line)}
+.istats b{display:block;font-family:var(--num);font-size:24px;font-weight:800;line-height:1.2;color:var(--navy)}
+.istats span{display:block;margin-top:2px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.isub{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line2)}
+.isub-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.isub-co{font-size:16.5px;font-weight:700;color:var(--text)}
+.isub-grp{font-size:12px;padding:2px 9px;border-radius:6px;background:#edf2fb;border:1px solid #d6e1f5;color:var(--navy)}
+.isub-d{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.job .isub ul{margin-top:12px;gap:12px}
 
 /* ask */
 .ask-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:start}
@@ -368,7 +374,8 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
   .job-date::after{left:1px;right:auto;top:5px}
   .job-date .now{margin:0 0 0 10px}
   .job-card{margin-left:22px;padding:22px 20px}
-  .intern{grid-template-columns:1fr;gap:2px}
+  .istats{grid-template-columns:repeat(2,1fr)}
+  .isub-d{margin-left:0;flex-basis:100%}
 }
 @media (max-width:640px){
   .container{padding:0 16px}
@@ -696,17 +703,45 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
         <div class="job-date">2020.05 — 2022.04<br><span class="now alt">INTERN</span></div>
         <div class="panel spot job-card">
           <div class="job-head">
-            <div><div class="job-co">券商研究所实习</div><div class="job-dept">三段卖方研究经历</div></div>
+            <div><div class="job-co">券商研究所实习</div><div class="job-dept">三段卖方研究经历 · 覆盖半导体与金属新材料</div></div>
             <span class="job-title">分析师助理</span>
           </div>
-          <div class="interns">
-            <div class="intern"><span class="d">2022.01–2022.04</span><span>德邦证券研究所</span><span class="r">电子组</span></div>
-            <div class="intern"><span class="d">2021.09–2022.01</span><span>申万宏源证券研究所</span><span class="r">专精特新组</span></div>
-            <div class="intern"><span class="d">2020.05–2020.09</span><span>西南证券研究所</span><span class="r">金属新材料组</span></div>
+          <div class="istats">
+            <div><b>6</b><span>篇深度报告</span></div>
+            <div><b>10</b><span>篇北交所公司点评</span></div>
+            <div><b>6</b><span>篇半年报点评</span></div>
+            <div><b>20+</b><span>篇会议 / 调研 / 专家纪要</span></div>
           </div>
-          <ul>
-            <li><span class="lt">研究与估值：</span>覆盖半导体与金属新材料，独立撰写深度报告 <em>6 篇</em>（行业 1 篇、公司 5 篇）；完成汽车半导体六大细分行业空间拆分测算、模拟 IC 行业分析、铜供需平衡预测及盈利预测估值；用 Python 处理几百家新三板公司数据。</li>
-          </ul>
+
+          <div class="isub">
+            <div class="isub-head"><span class="isub-co">德邦证券研究所</span><span class="isub-grp">电子组</span><span class="isub-d">2022.01–2022.04</span></div>
+            <ul>
+              <li><span class="lt">独立撰写一篇行业深度：</span>独立撰写车载 MCU 行业深度，着重分析了全球车载 MCU 的竞争格局以及车规级认证的难点，找出我国自给率极低的原因；分析汽车电动化、智能化带来车载 MCU 的新需求，挖掘在当下供给紧张的环境下国产厂商切入的机会，并推荐<em>三家</em>标的。</li>
+              <li><span class="lt">独立测算汽车半导体六大细分行业空间：</span>对车用 MCU、IGBT、SiC、DRAM、NAND、CIS 等<em>六大</em>细分行业空间进行量价拆分，先预测出汽车销量、电动车渗透率、智能驾驶渗透率等，再结合专家、产业调研、贸泽电子等预测出各产品单车搭载量和单价，最终计算出汽车半导体各细分行业的行业空间。</li>
+              <li><span class="lt">独立撰写一篇公司深度：</span>独立撰写国产硅片先锋沪硅产业的深度报告，重点围绕公司募资扩产来顺应全球半导体硅片的需求结构转型、半导体景气周期有望加速客户验证的逻辑来发掘公司的投资亮点。</li>
+              <li><span class="lt">参与策略会提问并整理二十篇纪要：</span>提前撰写问题，在策略会上向董秘提问，并进行现场速记；一共整理了华虹半导体、沪硅产业、芯海科技、华为 IGBT、博世、英飞凌等<em>二十多篇</em>会议 / 调研 / 专家纪要。</li>
+            </ul>
+          </div>
+
+          <div class="isub">
+            <div class="isub-head"><span class="isub-co">申万宏源证券研究所</span><span class="isub-grp">专精特新组</span><span class="isub-d">2021.09–2022.01</span></div>
+            <ul>
+              <li><span class="lt">半导体行业分析：</span>通过 WSTS、Yole、Semi、IC Insights 等网站搜集半导体行业数据，从上游晶圆厂的设备支出增速、产能利用率、涨价情况、芯片交期等方面，重点分析了半导体行业的周期性，并分析了模拟 IC、电源管理 IC、TWS 耳机、功率器件等细分行业的需求。</li>
+              <li><span class="lt">独立撰写一篇公司深度：</span>独立撰写模拟芯片小巨人南麟电子的深度报告，重点论述了公司自建封测厂在产品交期、质量、成本上的优势，以及未来研发 SoC &amp; SiP 的战略；分析了以 TWS 为代表的消费电子增量市场和芯片缺货对公司的驱动。</li>
+              <li><span class="lt">撰写十篇北交所公司点评：</span>挖掘公司财务、业务、行业的亮点，撰写 <em>10 篇</em>北交所上市公司的投资点评。</li>
+              <li><span class="lt">周报更新 &amp; 申万行业分类：</span>用 Choice 函数提取每周新三板数百家公司的数据并用 Python 处理，并更新周报；寻找新三板公司的 A 股对标公司，比较主营业务，对 <em>400 家</em>新三板公司进行申万三级行业分类。</li>
+            </ul>
+          </div>
+
+          <div class="isub">
+            <div class="isub-head"><span class="isub-co">西南证券研究所</span><span class="isub-grp">金属新材料组</span><span class="isub-d">2020.05–2020.09</span></div>
+            <ul>
+              <li><span class="lt">铜行业分析：</span>通过 SMM、ICSG、USGS 等网站搜集铜行业数据，建立铜分析构架，从产业链结构、资源分布、原材料价格、产能释放、需求缺口、宏观经济等方面，进行供需平衡预测，并对铜价、铜加工费进行展望。</li>
+              <li><span class="lt">独立撰写三篇公司深度：</span>独立撰写两家铜基新材料公司博威合金、楚江新材和一家工业用铜公司云南铜业的深度报告，重点分析了公司的发展历程、股权结构、主营业务、产能产量、财务状况、行业驱动、发展趋势等。</li>
+              <li><span class="lt">估值建模：</span>对公司业务进行拆分，通过预估产能、原材料价格、销售价格、毛利率等进行盈利预测；用绝对估值法估算出公司每股内在价值，用相对估值法估算出公司 PE 以及目标价。</li>
+              <li><span class="lt">撰写六篇半年报点评：</span>独立撰写有色行业半年报点评以及博威合金、云南铜业、湖南黄金、银泰黄金、紫金矿业等公司半年报点评，涉及行业点评、公司点评、亮点介绍、变动原因分析以及盈利预测调整。</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -804,7 +839,7 @@ footer .ai i{width:6px;height:6px;border-radius:50%;background:var(--teal)}
       <div class="panel spot sk reveal d2">
         <h3><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>工具技能</h3>
         <ul>
-          <li><b>Wind · Bloomberg</b><span>熟练使用金融数据库</span></li>
+          <li><b>Wind · Bloomberg · Choice</b><span>熟练使用金融数据库</span></li>
           <li><b>Python 数据分析</b><span>批量处理数百家公司数据</span></li>
           <li><b>AI 智能体</b><span>搭建办公自动化流程</span></li>
         </ul>
@@ -1123,8 +1158,12 @@ var KB=[
   a:'搭建**参股企业统一管理平台**：完成 **10 家**企业股权转让至平台集中管理、**2 家无亏损退出**、1 家注销。\n识别参股企业章程漏洞并及时与大股东交涉，推动完成章程修订与决策流程完善，维护公司小股东权益。'},
  {id:'compliance',q:'私募基金合规经验如何？',k:'私募 基金 合规 风控 管理人 中基协 基金业协会 协会 备案 报送 披露 资质 延期 法定代表人 持股 新规 鹏丰 监管',src:'工作经历 · 中集集装箱 资本管理部',
   a:'独立负责私募基金管理人**中集鹏丰**及旗下产品的信息报送、披露与资质维护，**连续 4 年合规运营**。\n· 管理人法定代表人持股新规生效前 **1 个月内**极限完成变更\n· 基金延期被中基协 **3 次拒绝**后持续沟通反馈，最终完成延期'},
- {id:'research',q:'有行业研究背景吗？',k:'研究 行研 实习 券商 证券 研究所 分析师 卖方 深度 报告 估值 半导体 电子 金属 新材料 专精特新 德邦 申万宏源 西南 模拟 ic 芯片 汽车半导体 铜 盈利预测 新三板',src:'实习经历 · 券商研究所',
-  a:'有。曾在**德邦证券（电子组）、申万宏源证券（专精特新组）、西南证券（金属新材料组）**研究所担任分析师助理，覆盖半导体与金属新材料。\n独立撰写**深度报告 6 篇**（行业 1 篇、公司 5 篇），完成汽车半导体六大细分行业空间拆分测算、模拟 IC 行业分析、铜供需平衡预测及盈利预测估值。'},
+ {id:'research',q:'有行业研究背景吗？',k:'研究 行研 实习 实习经历 实习经验 券商 证券 研究所 分析师 卖方 深度 报告 点评 纪要 北交所 新三板 半年报 德邦 申万宏源 西南 专精特新 电子 金属',src:'实习经历 · 券商研究所',
+  a:'有。先后在**德邦证券（电子组）、申万宏源证券（专精特新组）、西南证券（金属新材料组）**研究所担任分析师助理，覆盖半导体与金属新材料：\n· 独立撰写**深度报告 6 篇**（行业 1 篇、公司 5 篇）\n· 撰写 **10 篇**北交所公司点评、**6 篇**半年报点评\n· 整理华虹半导体、英飞凌、博世等**二十多篇**会议 / 调研 / 专家纪要\n· 对 **400 家**新三板公司进行申万三级行业分类'},
+ {id:'semi',q:'半导体方面做过哪些研究？',k:'半导体 芯片 电子 mcu 车载 车规 汽车半导体 igbt sic dram nand cis 硅片 沪硅 沪硅产业 模拟 模拟芯片 模拟ic 南麟 南麟电子 tws 封测 soc sip wsts yole ic insights 晶圆 周期 华虹 英飞凌 博世 功率器件 电源管理 自给率 国产 渗透率 行业空间',src:'实习经历 · 德邦证券 / 申万宏源',
+  a:'· **车载 MCU 行业深度**：分析全球竞争格局与车规级认证难点，找出我国自给率极低的原因，挖掘国产厂商切入机会并推荐三家标的\n· **汽车半导体六大细分空间测算**：对 MCU、IGBT、SiC、DRAM、NAND、CIS 做量价拆分，从汽车销量、电动车与智能驾驶渗透率推算单车搭载量和单价\n· **公司深度**：沪硅产业（国产硅片）、南麟电子（模拟芯片）\n· **周期分析**：从晶圆厂设备支出增速、产能利用率、涨价、芯片交期等维度分析半导体周期'},
+ {id:'metal',q:'有色金属 / 铜方面研究过什么？',k:'有色 金属 新材料 铜 铜价 铜加工费 加工费 供需 供需平衡 smm icsg usgs 博威合金 楚江新材 云南铜业 湖南黄金 银泰黄金 紫金矿业 黄金 半年报 西南证券 大宗 商品',src:'实习经历 · 西南证券 金属新材料组',
+  a:'· **铜行业分析**：通过 SMM、ICSG、USGS 搜集数据，建立铜分析框架，从产业链结构、资源分布、原材料价格、产能释放、需求缺口、宏观经济等方面做供需平衡预测，并展望铜价与铜加工费\n· **公司深度 3 篇**：博威合金、楚江新材、云南铜业\n· **半年报点评 6 篇**：有色行业及博威合金、云南铜业、湖南黄金、银泰黄金、紫金矿业等'},
  {id:'edu',q:'教育背景是怎样的？',k:'教育 学历 学校 大学 院校 硕士 研究生 本科 学士 毕业 台湾大学 台大 ntu 湖南大学 985 qs 排名 新加坡国立 nus 新加坡 交换 专业 经济学 数学',src:'教育背景',
   a:'· **台湾大学** · 经济学硕士（2018.09–2022.07），QS 世界第 54 名\n· **湖南大学** · 数学与应用数学学士（2014.09–2018.06），985\n· **新加坡国立大学** · FASStrack Asia 暑期交换（2019.06–2019.07），免学费'},
  {id:'cert',q:'有哪些专业证书？',k:'证书 资质 资格 资格证 认证 持证 cfa pmp 经济师 可持续 esg 科技咨询师 金融科技师 考试 项目管理',src:'证书技能',
@@ -1147,12 +1186,12 @@ var KB=[
   a:'王之寻的经验集中在**产业集团投融资与资本运作**：融资租赁与跨境融资、产业基金募投、存量资产盘活、股权融资与参股企业治理、私募基金合规，并有券商行业研究背景。\n具体求职意向，欢迎直接联系本人沟通。'},
  {id:'location',q:'现在在哪个城市？',k:'地点 城市 现居 居住 住 住址 哪里 深圳 广东 籍贯 老家 家乡 扬州 江苏 base',src:'基本信息',
   a:'现居**广东深圳**，籍贯**江苏扬州**。'},
- {id:'quant',q:'量化和建模能力如何？',k:'量化 建模 模型 测算 财务 财务模型 估值 数学 python 数据 分析 计算 回本 定量 excel',src:'教育背景 · 实习经历',
-  a:'本科为**湖南大学数学与应用数学**，硕士为**台湾大学经济学**。\n工作中组织充电站盘活的多轮调研测算；研究所期间完成汽车半导体六大细分行业空间拆分测算、铜供需平衡预测及盈利预测估值，并用 **Python** 处理几百家新三板公司数据。'},
+ {id:'quant',q:'量化和建模能力如何？',k:'量化 建模 模型 测算 财务 财务模型 估值 估值建模 绝对估值 相对估值 pe 目标价 内在价值 盈利预测 dcf 量价 拆分 数学 python choice 数据 分析 计算 回本 定量 excel',src:'教育背景 · 实习经历',
+  a:'本科为**湖南大学数学与应用数学**，硕士为**台湾大学经济学**。\n· **估值建模**：拆分公司业务，预估产能、原材料价格、售价、毛利率做盈利预测；用绝对估值法估算每股内在价值，用相对估值法估算 PE 与目标价\n· **行业空间测算**：对汽车半导体六大细分行业做量价拆分\n· **数据处理**：用 Choice 函数提取每周数百家新三板公司数据，并用 Python 处理\n· 工作中组织重庆充电站盘活的多轮调研测算'},
  {id:'hello',q:'你好',k:'你好 您好 hello hi hey 在吗 嗨 哈喽 早上好 下午好',src:'',
   a:'你好！我是王之寻的简历助手，可以回答关于工作经历、代表项目、证书能力、联系方式等问题。试试下面的推荐问题吧。'}
 ];
-var CHIPS=['intro','spv','lease','charging','ai','cert','hobby','contact'];
+var CHIPS=['intro','spv','lease','charging','research','ai','cert','hobby','contact'];
 var STOP={'什么':1,'哪些':1,'怎么':1,'怎样':1,'如何':1,'有没':1,'没有':1,'是否':1,'可以':1,'一下':1,'请问':1,'这个':1,'那个':1,'问题':1,'他的':1,'她的':1,'你的':1,'有什':1,'么样':1,'样的':1,'是什':1,'王之':1,'之寻':1,'的':1,'了':1,'吗':1,'呢':1,'是':1,'有':1,'在':1,'和':1,'他':1,'她':1,'你':1,'我':1,'么':1,'什':1,'哪':1,'怎':1,'过':1,'做':1,'会':1,'能':1,'吧':1,'啊':1,'呀':1,'请':1,'问':1,'一':1,'下':1,'这':1,'那':1,'个':1,'些':1,'多':1,'少':1,'都':1,'也':1,'就':1,'还':1,'很':1,'对':1,'与':1,'及':1,'等':1,'其':1,'于':1,'为':1,'被':1,'把':1,'让':1,'给':1,'要':1,'想':1,'可':1,'以':1,'得':1,'着':1,'所':1,'从':1,'到':1,'如':1,'何':1,'样':1,'啥':1,'嘛':1,'王':1,'之':1,'寻':1,'方':1,'面':1,'经':1,'验':1,'具':1,'体':1};
 function tok(s){
   var out=[],re=/[a-z0-9][a-z0-9.+#%]*|[一-鿿]+/g,m;
